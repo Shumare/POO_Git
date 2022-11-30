@@ -44,7 +44,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -118,18 +118,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="gauffre.cpp" />
-    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="Commande.cpp" />
+    <ClCompile Include="Connection.cpp" />
+    <ClCompile Include="CppCLR_WinformsProjekt.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Pers.cpp" />
+    <ClCompile Include="Personnel.cpp" />
+    <ClCompile Include="Stats.cpp" />
+    <ClCompile Include="Stock.cpp" />
+    <ClCompile Include="Sup.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="gauffre.h" />
-    <ClInclude Include="MyForm.h">
+    <ClInclude Include="Client.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Commande.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Connection.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Pers.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Personnel.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Stats.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Stock.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Sup.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MyForm.resx">
-      <DependentUpon>MyForm.h</DependentUpon>
+    <EmbeddedResource Include="Connection.resx">
+      <DependentUpon>Connection.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pers.resx">
+      <DependentUpon>Pers.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sup.resx">
+      <DependentUpon>Sup.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
