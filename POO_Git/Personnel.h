@@ -121,7 +121,7 @@ namespace Interface2_1 {
 			// 
 			// comboBox1
 			// 
-			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Enabled = false;
 			this->comboBox1->Location = System::Drawing::Point(280, 65);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(234, 24);
@@ -151,11 +151,11 @@ namespace Interface2_1 {
 			// radioButton2
 			// 
 			this->radioButton2->AutoSize = true;
+			this->radioButton2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->radioButton2->Location = System::Drawing::Point(280, 21);
 			this->radioButton2->Name = L"radioButton2";
 			this->radioButton2->Size = System::Drawing::Size(146, 21);
 			this->radioButton2->TabIndex = 11;
-			this->radioButton2->TabStop = true;
 			this->radioButton2->Text = L"Personnel Existant";
 			this->radioButton2->UseVisualStyleBackColor = true;
 			this->radioButton2->CheckedChanged += gcnew System::EventHandler(this, &Personnel::radioButton2_CheckedChanged);
@@ -163,6 +163,8 @@ namespace Interface2_1 {
 			// radioButton1
 			// 
 			this->radioButton1->AutoSize = true;
+			this->radioButton1->Checked = true;
+			this->radioButton1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->radioButton1->Location = System::Drawing::Point(9, 21);
 			this->radioButton1->Name = L"radioButton1";
 			this->radioButton1->Size = System::Drawing::Size(154, 21);
@@ -438,8 +440,18 @@ namespace Interface2_1 {
 #pragma endregion
 		//Choix Personnel 
 	private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (radioButton1->Checked == true)
+		{
+			this->comboBox1->Enabled = false;
+			this->textBox3->ReadOnly = false;
+		}
 	}
 	private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (radioButton2->Checked == true)
+		{
+			this->comboBox1->Enabled = true;
+			this->textBox3->ReadOnly = true;
+		}
 	}
 	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}

@@ -158,11 +158,23 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Client.resx">
+      <DependentUpon>Client.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Commande.resx">
+      <DependentUpon>Commande.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Connection.resx">
       <DependentUpon>Connection.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pers.resx">
       <DependentUpon>Pers.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnel.resx">
+      <DependentUpon>Personnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock.resx">
+      <DependentUpon>Stock.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sup.resx">
       <DependentUpon>Sup.h</DependentUpon>

@@ -139,17 +139,20 @@ namespace Interface2_1 {
 			// radioButton2
 			// 
 			this->radioButton2->AutoSize = true;
+			this->radioButton2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->radioButton2->Location = System::Drawing::Point(280, 21);
 			this->radioButton2->Name = L"radioButton2";
 			this->radioButton2->Size = System::Drawing::Size(117, 21);
 			this->radioButton2->TabIndex = 12;
-			this->radioButton2->TabStop = true;
 			this->radioButton2->Text = L"Client Existant";
 			this->radioButton2->UseVisualStyleBackColor = true;
+			this->radioButton2->CheckedChanged += gcnew System::EventHandler(this, &Client::radioButton2_CheckedChanged);
 			// 
 			// radioButton1
 			// 
 			this->radioButton1->AutoSize = true;
+			this->radioButton1->Checked = true;
+			this->radioButton1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->radioButton1->Location = System::Drawing::Point(9, 21);
 			this->radioButton1->Name = L"radioButton1";
 			this->radioButton1->Size = System::Drawing::Size(125, 21);
@@ -157,9 +160,11 @@ namespace Interface2_1 {
 			this->radioButton1->TabStop = true;
 			this->radioButton1->Text = L"Nouveau Client";
 			this->radioButton1->UseVisualStyleBackColor = true;
+			this->radioButton1->CheckedChanged += gcnew System::EventHandler(this, &Client::radioButton1_CheckedChanged);
 			// 
 			// comboBox1
 			// 
+			this->comboBox1->Enabled = false;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Location = System::Drawing::Point(280, 65);
 			this->comboBox1->Name = L"comboBox1";
@@ -202,6 +207,7 @@ namespace Interface2_1 {
 			// radioButton5
 			// 
 			this->radioButton5->AutoSize = true;
+			this->radioButton5->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->radioButton5->Location = System::Drawing::Point(384, 119);
 			this->radioButton5->Name = L"radioButton5";
 			this->radioButton5->Size = System::Drawing::Size(86, 21);
@@ -214,6 +220,7 @@ namespace Interface2_1 {
 			// radioButton4
 			// 
 			this->radioButton4->AutoSize = true;
+			this->radioButton4->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->radioButton4->Location = System::Drawing::Point(278, 119);
 			this->radioButton4->Name = L"radioButton4";
 			this->radioButton4->Size = System::Drawing::Size(100, 21);
@@ -226,6 +233,8 @@ namespace Interface2_1 {
 			// radioButton3
 			// 
 			this->radioButton3->AutoSize = true;
+			this->radioButton3->Checked = true;
+			this->radioButton3->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->radioButton3->Location = System::Drawing::Point(186, 119);
 			this->radioButton3->Name = L"radioButton3";
 			this->radioButton3->Size = System::Drawing::Size(86, 21);
@@ -376,9 +385,9 @@ namespace Interface2_1 {
 			this->label3->AutoSize = true;
 			this->label3->Location = System::Drawing::Point(6, 90);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(68, 17);
+			this->label3->Size = System::Drawing::Size(71, 17);
 			this->label3->TabIndex = 9;
-			this->label3->Text = L"Hire Date";
+			this->label3->Text = L"Birth Date";
 			// 
 			// textBox2
 			// 
@@ -480,7 +489,20 @@ namespace Interface2_1 {
 		}
 #pragma endregion
 		//Choix Client 
-
+	private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (radioButton1->Checked == true)
+		{
+			this->comboBox1->Enabled = false;
+			this->textBox3->ReadOnly = false;
+		}
+	}
+	private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (radioButton2->Checked == true)
+		{
+			this->comboBox1->Enabled = true;
+			this->textBox3->ReadOnly = true;
+		}
+	}
 	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 
@@ -526,5 +548,5 @@ namespace Interface2_1 {
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+};
 }
