@@ -52,8 +52,8 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::TextBox^ textBox10;
 	private: System::Windows::Forms::TextBox^ textBox9;
-	private: System::Windows::Forms::TextBox^ textBox8;
-	private: System::Windows::Forms::TextBox^ textBox7;
+
+
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::TextBox^ textBox5;
 	private: System::Windows::Forms::TextBox^ textBox4;
@@ -73,6 +73,10 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::RadioButton^ radioButton5;
 	private: System::Windows::Forms::RadioButton^ radioButton4;
 	private: System::Windows::Forms::RadioButton^ radioButton3;
+	private: System::Windows::Forms::ComboBox^ comboBox3;
+	private: System::Windows::Forms::ComboBox^ comboBox2;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
 
 	private:
 		/// <summary>
@@ -92,6 +96,10 @@ namespace Interface2_1 {
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->radioButton5 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton4 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton3 = (gcnew System::Windows::Forms::RadioButton());
@@ -105,8 +113,6 @@ namespace Interface2_1 {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
@@ -164,6 +170,7 @@ namespace Interface2_1 {
 			// 
 			// comboBox1
 			// 
+			this->comboBox1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->comboBox1->Enabled = false;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Location = System::Drawing::Point(280, 65);
@@ -174,6 +181,10 @@ namespace Interface2_1 {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->button5);
+			this->groupBox2->Controls->Add(this->button4);
+			this->groupBox2->Controls->Add(this->comboBox3);
+			this->groupBox2->Controls->Add(this->comboBox2);
 			this->groupBox2->Controls->Add(this->radioButton5);
 			this->groupBox2->Controls->Add(this->radioButton4);
 			this->groupBox2->Controls->Add(this->radioButton3);
@@ -187,8 +198,6 @@ namespace Interface2_1 {
 			this->groupBox2->Controls->Add(this->label4);
 			this->groupBox2->Controls->Add(this->textBox10);
 			this->groupBox2->Controls->Add(this->textBox9);
-			this->groupBox2->Controls->Add(this->textBox8);
-			this->groupBox2->Controls->Add(this->textBox7);
 			this->groupBox2->Controls->Add(this->textBox6);
 			this->groupBox2->Controls->Add(this->textBox5);
 			this->groupBox2->Controls->Add(this->textBox4);
@@ -203,6 +212,48 @@ namespace Interface2_1 {
 			this->groupBox2->Size = System::Drawing::Size(520, 344);
 			this->groupBox2->TabIndex = 6;
 			this->groupBox2->TabStop = false;
+			// 
+			// button5
+			// 
+			this->button5->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button5->Location = System::Drawing::Point(492, 258);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(22, 22);
+			this->button5->TabIndex = 30;
+			this->button5->Text = L"+";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &Client::button5_Click);
+			// 
+			// button4
+			// 
+			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button4->Location = System::Drawing::Point(492, 230);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(22, 22);
+			this->button4->TabIndex = 29;
+			this->button4->Text = L"+";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Client::button4_Click);
+			// 
+			// comboBox3
+			// 
+			this->comboBox3->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->comboBox3->FormattingEnabled = true;
+			this->comboBox3->Location = System::Drawing::Point(186, 255);
+			this->comboBox3->Name = L"comboBox3";
+			this->comboBox3->Size = System::Drawing::Size(300, 24);
+			this->comboBox3->TabIndex = 28;
+			this->comboBox3->SelectedIndexChanged += gcnew System::EventHandler(this, &Client::comboBox3_SelectedIndexChanged);
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Location = System::Drawing::Point(186, 227);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(300, 24);
+			this->comboBox2->TabIndex = 13;
+			this->comboBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &Client::comboBox2_SelectedIndexChanged);
 			// 
 			// radioButton5
 			// 
@@ -332,22 +383,6 @@ namespace Interface2_1 {
 			this->textBox9->TabIndex = 16;
 			this->textBox9->TextChanged += gcnew System::EventHandler(this, &Client::textBox9_TextChanged);
 			// 
-			// textBox8
-			// 
-			this->textBox8->Location = System::Drawing::Point(186, 258);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(328, 22);
-			this->textBox8->TabIndex = 15;
-			this->textBox8->TextChanged += gcnew System::EventHandler(this, &Client::textBox8_TextChanged);
-			// 
-			// textBox7
-			// 
-			this->textBox7->Location = System::Drawing::Point(186, 230);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(328, 22);
-			this->textBox7->TabIndex = 14;
-			this->textBox7->TextChanged += gcnew System::EventHandler(this, &Client::textBox7_TextChanged);
-			// 
 			// textBox6
 			// 
 			this->textBox6->Location = System::Drawing::Point(186, 202);
@@ -425,6 +460,7 @@ namespace Interface2_1 {
 			// 
 			// button1
 			// 
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button1->Location = System::Drawing::Point(355, 463);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(177, 33);
@@ -435,6 +471,7 @@ namespace Interface2_1 {
 			// 
 			// button2
 			// 
+			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button2->Location = System::Drawing::Point(172, 463);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(177, 33);
@@ -456,6 +493,7 @@ namespace Interface2_1 {
 			// 
 			// button3
 			// 
+			this->button3->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button3->Location = System::Drawing::Point(1147, 399);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(207, 58);
@@ -527,9 +565,13 @@ namespace Interface2_1 {
 	}
 	private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void textBox8_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void comboBox3_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void textBox9_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}

@@ -1,4 +1,5 @@
 #pragma once
+#include "Contain.h"
 
 namespace Interface2_1 {
 
@@ -61,6 +62,8 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Label^ label9;
 
 	private:
 		/// <summary>
@@ -80,6 +83,8 @@ namespace Interface2_1 {
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
@@ -155,6 +160,8 @@ namespace Interface2_1 {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->label9);
+			this->groupBox2->Controls->Add(this->button5);
 			this->groupBox2->Controls->Add(this->label8);
 			this->groupBox2->Controls->Add(this->label7);
 			this->groupBox2->Controls->Add(this->label6);
@@ -173,14 +180,33 @@ namespace Interface2_1 {
 			this->groupBox2->Controls->Add(this->label1);
 			this->groupBox2->Location = System::Drawing::Point(12, 113);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(520, 296);
+			this->groupBox2->Size = System::Drawing::Size(520, 325);
 			this->groupBox2->TabIndex = 7;
 			this->groupBox2->TabStop = false;
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(6, 156);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(95, 17);
+			this->label9->TabIndex = 16;
+			this->label9->Text = L"Nouvel Article";
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(187, 156);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(327, 23);
+			this->button5->TabIndex = 13;
+			this->button5->Text = L"Ajouter";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &Commande::button5_Click);
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(6, 268);
+			this->label8->Location = System::Drawing::Point(6, 297);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(35, 17);
 			this->label8->TabIndex = 15;
@@ -189,7 +215,7 @@ namespace Interface2_1 {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(6, 240);
+			this->label7->Location = System::Drawing::Point(6, 269);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(35, 17);
 			this->label7->TabIndex = 14;
@@ -198,7 +224,7 @@ namespace Interface2_1 {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(6, 212);
+			this->label6->Location = System::Drawing::Point(6, 241);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(27, 17);
 			this->label6->TabIndex = 13;
@@ -207,7 +233,7 @@ namespace Interface2_1 {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(6, 184);
+			this->label5->Location = System::Drawing::Point(6, 213);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(63, 17);
 			this->label5->TabIndex = 12;
@@ -216,7 +242,7 @@ namespace Interface2_1 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(6, 156);
+			this->label4->Location = System::Drawing::Point(6, 185);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(77, 17);
 			this->label4->TabIndex = 11;
@@ -242,40 +268,45 @@ namespace Interface2_1 {
 			// 
 			// textBox8
 			// 
-			this->textBox8->Location = System::Drawing::Point(187, 268);
+			this->textBox8->Location = System::Drawing::Point(187, 297);
 			this->textBox8->Name = L"textBox8";
+			this->textBox8->ReadOnly = true;
 			this->textBox8->Size = System::Drawing::Size(327, 22);
 			this->textBox8->TabIndex = 8;
 			this->textBox8->TextChanged += gcnew System::EventHandler(this, &Commande::textBox8_TextChanged);
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(187, 240);
+			this->textBox7->Location = System::Drawing::Point(187, 269);
 			this->textBox7->Name = L"textBox7";
+			this->textBox7->ReadOnly = true;
 			this->textBox7->Size = System::Drawing::Size(327, 22);
 			this->textBox7->TabIndex = 7;
 			this->textBox7->TextChanged += gcnew System::EventHandler(this, &Commande::textBox7_TextChanged);
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(187, 212);
+			this->textBox6->Location = System::Drawing::Point(187, 241);
 			this->textBox6->Name = L"textBox6";
+			this->textBox6->ReadOnly = true;
 			this->textBox6->Size = System::Drawing::Size(327, 22);
 			this->textBox6->TabIndex = 6;
 			this->textBox6->TextChanged += gcnew System::EventHandler(this, &Commande::textBox6_TextChanged);
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(187, 184);
+			this->textBox5->Location = System::Drawing::Point(187, 213);
 			this->textBox5->Name = L"textBox5";
+			this->textBox5->ReadOnly = true;
 			this->textBox5->Size = System::Drawing::Size(327, 22);
 			this->textBox5->TabIndex = 5;
 			this->textBox5->TextChanged += gcnew System::EventHandler(this, &Commande::textBox5_TextChanged);
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(187, 156);
+			this->textBox4->Location = System::Drawing::Point(187, 185);
 			this->textBox4->Name = L"textBox4";
+			this->textBox4->ReadOnly = true;
 			this->textBox4->Size = System::Drawing::Size(327, 22);
 			this->textBox4->TabIndex = 4;
 			this->textBox4->TextChanged += gcnew System::EventHandler(this, &Commande::textBox4_TextChanged);
@@ -315,7 +346,7 @@ namespace Interface2_1 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(355, 415);
+			this->button1->Location = System::Drawing::Point(355, 444);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(177, 33);
 			this->button1->TabIndex = 8;
@@ -325,7 +356,7 @@ namespace Interface2_1 {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(172, 415);
+			this->button2->Location = System::Drawing::Point(172, 444);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(177, 33);
 			this->button2->TabIndex = 9;
@@ -335,7 +366,7 @@ namespace Interface2_1 {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(172, 454);
+			this->button3->Location = System::Drawing::Point(172, 483);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(360, 33);
 			this->button3->TabIndex = 10;
@@ -394,7 +425,12 @@ namespace Interface2_1 {
 		if (radioButton1->Checked == true)
 		{
 			this->comboBox1->Enabled = false;
-			this->textBox1->ReadOnly = false;
+			this->textBox1->ReadOnly = true;
+			this->textBox4->ReadOnly = true;
+			this->textBox5->ReadOnly = true;
+			this->textBox6->ReadOnly = true;
+			this->textBox7->ReadOnly = true;
+			this->textBox8->ReadOnly = true;
 		}
 	}
 	private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -402,6 +438,11 @@ namespace Interface2_1 {
 		{
 			this->comboBox1->Enabled = true;
 			this->textBox1->ReadOnly = true;
+			this->textBox4->ReadOnly = true;
+			this->textBox5->ReadOnly = true;
+			this->textBox6->ReadOnly = true;
+			this->textBox7->ReadOnly = true;
+			this->textBox8->ReadOnly = true;
 		}
 	}
 	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -413,6 +454,10 @@ namespace Interface2_1 {
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		Contain^ C1 = gcnew Contain();
+		C1->Show();
 	}
 	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -442,5 +487,5 @@ namespace Interface2_1 {
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+};
 }

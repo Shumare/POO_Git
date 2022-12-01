@@ -50,7 +50,7 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::TextBox^ textBox8;
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::TextBox^ textBox6;
-	private: System::Windows::Forms::TextBox^ textBox5;
+
 	private: System::Windows::Forms::TextBox^ textBox4;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::TextBox^ textBox1;
@@ -60,6 +60,8 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::ComboBox^ comboBox2;
 
 	private:
 		/// <summary>
@@ -79,6 +81,8 @@ namespace Interface2_1 {
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
@@ -89,7 +93,6 @@ namespace Interface2_1 {
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -143,6 +146,7 @@ namespace Interface2_1 {
 			// 
 			// comboBox1
 			// 
+			this->comboBox1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->comboBox1->Enabled = false;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Location = System::Drawing::Point(280, 65);
@@ -153,6 +157,8 @@ namespace Interface2_1 {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->comboBox2);
+			this->groupBox2->Controls->Add(this->button3);
 			this->groupBox2->Controls->Add(this->label8);
 			this->groupBox2->Controls->Add(this->label7);
 			this->groupBox2->Controls->Add(this->label6);
@@ -163,7 +169,6 @@ namespace Interface2_1 {
 			this->groupBox2->Controls->Add(this->textBox8);
 			this->groupBox2->Controls->Add(this->textBox7);
 			this->groupBox2->Controls->Add(this->textBox6);
-			this->groupBox2->Controls->Add(this->textBox5);
 			this->groupBox2->Controls->Add(this->textBox4);
 			this->groupBox2->Controls->Add(this->textBox2);
 			this->groupBox2->Controls->Add(this->textBox1);
@@ -174,6 +179,27 @@ namespace Interface2_1 {
 			this->groupBox2->Size = System::Drawing::Size(520, 296);
 			this->groupBox2->TabIndex = 8;
 			this->groupBox2->TabStop = false;
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Location = System::Drawing::Point(187, 182);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(299, 24);
+			this->comboBox2->TabIndex = 13;
+			this->comboBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &Stock::comboBox2_SelectedIndexChanged);
+			// 
+			// button3
+			// 
+			this->button3->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button3->Location = System::Drawing::Point(492, 184);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(22, 22);
+			this->button3->TabIndex = 16;
+			this->button3->Text = L"+";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Stock::button3_Click);
 			// 
 			// label8
 			// 
@@ -198,18 +224,18 @@ namespace Interface2_1 {
 			this->label6->AutoSize = true;
 			this->label6->Location = System::Drawing::Point(6, 212);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(35, 17);
+			this->label6->Size = System::Drawing::Size(63, 17);
 			this->label6->TabIndex = 13;
-			this->label6->Text = L"TVA";
+			this->label6->Text = L"HT Price";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
 			this->label5->Location = System::Drawing::Point(6, 184);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(63, 17);
+			this->label5->Size = System::Drawing::Size(41, 17);
 			this->label5->TabIndex = 12;
-			this->label5->Text = L"HT Price";
+			this->label5->Text = L"Color";
 			// 
 			// label4
 			// 
@@ -262,14 +288,6 @@ namespace Interface2_1 {
 			this->textBox6->TabIndex = 6;
 			this->textBox6->TextChanged += gcnew System::EventHandler(this, &Stock::textBox6_TextChanged);
 			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(187, 184);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(327, 22);
-			this->textBox5->TabIndex = 5;
-			this->textBox5->TextChanged += gcnew System::EventHandler(this, &Stock::textBox5_TextChanged);
-			// 
 			// textBox4
 			// 
 			this->textBox4->Location = System::Drawing::Point(187, 156);
@@ -290,6 +308,7 @@ namespace Interface2_1 {
 			// 
 			this->textBox1->Location = System::Drawing::Point(187, 44);
 			this->textBox1->Name = L"textBox1";
+			this->textBox1->ReadOnly = true;
 			this->textBox1->Size = System::Drawing::Size(327, 22);
 			this->textBox1->TabIndex = 1;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Stock::textBox1_TextChanged);
@@ -313,6 +332,7 @@ namespace Interface2_1 {
 			// 
 			// button1
 			// 
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button1->Location = System::Drawing::Point(355, 415);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(177, 33);
@@ -323,6 +343,7 @@ namespace Interface2_1 {
 			// 
 			// button2
 			// 
+			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button2->Location = System::Drawing::Point(172, 415);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(177, 33);
@@ -344,6 +365,7 @@ namespace Interface2_1 {
 			// 
 			// button4
 			// 
+			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button4->Location = System::Drawing::Point(1132, 399);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(207, 58);
@@ -364,6 +386,7 @@ namespace Interface2_1 {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
+			this->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Name = L"Stock";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Stock";
@@ -381,7 +404,7 @@ namespace Interface2_1 {
 		if (radioButton1->Checked == true)
 		{
 			this->comboBox1->Enabled = false;
-			this->textBox1->ReadOnly = false;
+			this->textBox1->ReadOnly = true;
 		}
 	}
 	private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -403,7 +426,9 @@ namespace Interface2_1 {
 	}
 	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -425,5 +450,5 @@ namespace Interface2_1 {
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+};
 }

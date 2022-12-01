@@ -122,6 +122,7 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Connection.cpp" />
+    <ClCompile Include="Contain.cpp" />
     <ClCompile Include="CppCLR_WinformsProjekt.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Pers.cpp" />
@@ -138,6 +139,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Connection.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Contain.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="pch.h" />
@@ -166,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Connection.resx">
       <DependentUpon>Connection.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contain.resx">
+      <DependentUpon>Contain.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pers.resx">
       <DependentUpon>Pers.h</DependentUpon>

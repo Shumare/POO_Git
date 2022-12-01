@@ -98,10 +98,12 @@ namespace Interface2_1 {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		Sup^ S1 = gcnew Sup();
 		S1->Show();
+		this->Hide();
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		Pers^ P1 = gcnew Pers();
 		P1->Show();
+		this->Hide();
 	}
 	};
 }
