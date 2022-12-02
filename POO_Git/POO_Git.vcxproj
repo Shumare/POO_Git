@@ -121,6 +121,7 @@
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
+    <ClCompile Include="Connect.cpp" />
     <ClCompile Include="Connection.cpp" />
     <ClCompile Include="Contain.cpp" />
     <ClCompile Include="CppCLR_WinformsProjekt.cpp" />
@@ -138,6 +139,7 @@
     <ClInclude Include="Commande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Connect.h" />
     <ClInclude Include="Connection.h">
       <FileType>CppForm</FileType>
     </ClInclude>
