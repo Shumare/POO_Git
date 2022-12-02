@@ -121,7 +121,9 @@
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
+    <ClCompile Include="Connect.cpp" />
     <ClCompile Include="Connection.cpp" />
+    <ClCompile Include="Contain.cpp" />
     <ClCompile Include="CppCLR_WinformsProjekt.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Pers.cpp" />
@@ -137,7 +139,11 @@
     <ClInclude Include="Commande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Connect.h" />
     <ClInclude Include="Connection.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Contain.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="pch.h" />
@@ -158,11 +164,26 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Client.resx">
+      <DependentUpon>Client.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Commande.resx">
+      <DependentUpon>Commande.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Connection.resx">
       <DependentUpon>Connection.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Contain.resx">
+      <DependentUpon>Contain.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pers.resx">
       <DependentUpon>Pers.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnel.resx">
+      <DependentUpon>Personnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock.resx">
+      <DependentUpon>Stock.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sup.resx">
       <DependentUpon>Sup.h</DependentUpon>
