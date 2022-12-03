@@ -1,7 +1,7 @@
 #pragma once
 #include "Sup.h"
 #include "Pers.h"
-
+#include "CLclient.h"
 namespace Interface2_1 {
 
 	using namespace System;
@@ -36,6 +36,8 @@ namespace Interface2_1 {
 				delete components;
 			}
 		}
+	public: NS_Comp_Svc::CLclient^ oSvc;
+	public: System::Data::DataSet^ oDs;
 	private: System::Windows::Forms::Button^ button1;
 	protected:
 	private: System::Windows::Forms::Button^ button2;
@@ -137,6 +139,10 @@ namespace Interface2_1 {
 
 	//test
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->SelectTout("rsl");
+		this->dataGridView1->Refresh();
+		this->dataGridView1->DataSource = this->oDs;
+		this->dataGridView1->DataMember = "rsl";
 	}
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}

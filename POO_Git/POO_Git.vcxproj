@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CLclient.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Connect.cpp" />
@@ -130,9 +131,11 @@
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="Stats.cpp" />
     <ClCompile Include="Stock.cpp" />
+    <ClCompile Include="StockProc.cpp" />
     <ClCompile Include="Sup.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CLclient.h" />
     <ClInclude Include="Client.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -159,6 +162,7 @@
     <ClInclude Include="Stock.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="StockProc.h" />
     <ClInclude Include="Sup.h">
       <FileType>CppForm</FileType>
     </ClInclude>
