@@ -11,7 +11,7 @@ namespace NS_Comp_Mappage
 		System::String^ nom;
 		System::String^ prenom;
 	public:
-		System::String^ SelectClient(void);
+		System::String^ SelectAllCommision(void);
 		void setId(System::String^);
 		void setNom(System::String^);
 		void setPrenom(System::String^);

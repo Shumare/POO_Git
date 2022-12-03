@@ -1,8 +1,8 @@
 #include "StockProc.h"
 
-System::String^ NS_Comp_Mappage::StockProc::SelectClient(void) {
+System::String^ NS_Comp_Mappage::StockProc::SelectAllCommision(void) {
 
-	return "dbo.SelectAl";
+	return "dbo.SelectAllCommision";
 }
 
 void NS_Comp_Mappage::StockProc::setId(System::String^ Id)
