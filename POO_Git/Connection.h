@@ -36,13 +36,14 @@ namespace Interface2_1 {
 				delete components;
 			}
 		}
-	public: NS_Comp_Svc::CLclient^ oSvc;
+	public: NS_Comp_Svc::CLclient^ oSvc = gcnew NS_Comp_Svc::CLclient;
 	public: System::Data::DataSet^ oDs;
 	private: System::Windows::Forms::Button^ button1;
 	protected:
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Label^ label1;
 
 	private:
 		/// <summary>
@@ -61,6 +62,7 @@ namespace Interface2_1 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -107,6 +109,15 @@ namespace Interface2_1 {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &Connection::button3_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(915, 455);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(46, 17);
+			this->label1->TabIndex = 4;
+			this->label1->Text = L"label1";
+			// 
 			// Connection
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -114,6 +125,7 @@ namespace Interface2_1 {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->ClientSize = System::Drawing::Size(1382, 553);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button2);
@@ -123,6 +135,7 @@ namespace Interface2_1 {
 			this->Text = L"Connection";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -139,9 +152,9 @@ namespace Interface2_1 {
 
 	//test
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc->SelectTout("rsl");
+		this->label1->Text = L"yes";
 		this->dataGridView1->Refresh();
-		this->dataGridView1->DataSource = this->oDs;
+		this->dataGridView1->DataSource = this->oSvc->SelectTout("rsl");;
 		this->dataGridView1->DataMember = "rsl";
 	}
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {

@@ -5,7 +5,7 @@ namespace NS_Comp_Mappage
 
 	ref class StockProc
 	{
-	private:
+	public:
 		//System::String^ sSql;
 		System::String^ Id;
 		System::String^ nom;

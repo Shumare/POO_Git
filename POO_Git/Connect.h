@@ -5,7 +5,7 @@ namespace NS_Comp_Data
 {
     ref class Connect
     {
-    private:
+    public:
         System::String^ sSql;
         System::String^ sCnx;
         System::Data::SqlClient::SqlConnection^ oCnx;

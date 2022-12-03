@@ -14,12 +14,13 @@ NS_Comp_Data::Connect::Connect(void)
     this->oDA = gcnew System::Data::SqlClient::SqlDataAdapter();
     this->oDs = gcnew System::Data::DataSet();
 
-    this->oCmd->CommandType = System::Data::CommandType::Text;
+    this->oCmd->CommandType = System::Data::CommandType::StoredProcedure;
 }
 System::Data::DataSet^ NS_Comp_Data::Connect::getProc(System::String^ sSql, System::String^ sDataTableName)
 {
     this->oDs->Clear();
     this->sSql = sSql;
+    oCmd->CommandType = System::Data::CommandType::StoredProcedure;
     this->oCmd->CommandText = this->sSql;
     this->oDA->SelectCommand = this->oCmd;
     this->oDA->Fill(this->oDs, sDataTableName);
