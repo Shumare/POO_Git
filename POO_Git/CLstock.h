@@ -5,7 +5,8 @@ namespace NS_Comp_Svc {
 
 	ref class CLstock
 	{
-	public:
+	private:
+
 		System::String^ name_art;
 		int number_art;
 		System::String^ type_art;
@@ -19,10 +20,10 @@ namespace NS_Comp_Svc {
 		NS_Comp_Mappage::StockProc^ oMappTB;
 	public:
 		CLstock(void);
-		System::Data::DataSet^ NewArticles(System::String^, System::String^,int, System::String^,int,int,int,int,int,int);
+		System::Data::DataSet^ NewArticles(System::String^, System::String^, System::String^, System::String^,System::String^,System::String^,System::String^,System::String^,System::String^,System::String^);
+		//Accesseur
 		void setNameArt(System::String^);
 		System::String^ getNameArt(void);
-		
 		void setNumberArt(int);
 		int getNumberArt(void);
 		void setTypeArt(System::String^);

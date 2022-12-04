@@ -7,18 +7,30 @@ NS_Comp_Svc::CLstock::CLstock(void)
 	this->oMappTB = gcnew NS_Comp_Mappage::StockProc();
 }
 
-System::Data::DataSet^ NS_Comp_Svc::CLstock::NewArticles(System::String^ dataTableName)
+System::Data::DataSet^ NS_Comp_Svc::CLstock::NewArticles(System::String^ dataTableName, System::String^ name, System::String^ number, System::String^ type, System::String^ reference, System::String^ htprice, System::String^ tva, System::String^ stock, System::String^ replishment, System::String^ idcolor)
 {
-
 	System::String^ sql;
 	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
-
-	System::String^ numberS = "42";
-	int number;
-
-	number = System::Convert::ToInt32(numberS);
-	sql = this->oMappTB->NewArticles();
 	
+	int numberC = System::Convert::ToInt32(number);
+	int htC = System::Convert::ToInt32(htprice);
+	int tvaC = System::Convert::ToInt32(tva);
+	int stockC = System::Convert::ToInt32(stock);
+	int replishmentC =System::Convert::ToInt32(replishment);
+	int idcolorC = System::Convert::ToInt32(idcolor);
+
+	
+	setNameArt(System::Convert::ToString(name));
+	setNumberArt(numberC);
+	setTypeArt(System::Convert::ToString(type));
+	setReferenceArt(System::Convert::ToString(reference));
+	setHtPriceArt(htC);
+	setTvaArt(tvaC); 
+	setStockArt(stockC);
+	setReplishmentArt(replishmentC);
+	setIdColor(idcolorC);
+	//System::Data::SqlDbType::
+	sql = this->oMappTB->NewArticles();
 	cmd->Parameters->Add("@name_art", System::Data::SqlDbType::NVarChar)->Value = this->name_art;
 	cmd->Parameters->Add("@number_art", System::Data::SqlDbType::Int)->Value = this->number_art;
 	cmd->Parameters->Add("@type_art", System::Data::SqlDbType::NVarChar)->Value = this->type_art;
@@ -28,6 +40,8 @@ System::Data::DataSet^ NS_Comp_Svc::CLstock::NewArticles(System::String^ dataTab
 	cmd->Parameters->Add("@stock_art", System::Data::SqlDbType::Int)->Value = this->stock_art;
 	cmd->Parameters->Add("@replishment_art", System::Data::SqlDbType::Int)->Value = this->replishment_art;
 	cmd->Parameters->Add("@id_color", System::Data::SqlDbType::Int)->Value = this->id_color;
+
+	
 	return this->oCad->getProc(sql, dataTableName, cmd);
 }
 

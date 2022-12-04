@@ -14,7 +14,6 @@ NS_Comp_Data::Connect::Connect(void)
     this->oDA = gcnew System::Data::SqlClient::SqlDataAdapter();
     this->oDs = gcnew System::Data::DataSet();
 
-    this->oCmd->CommandType = System::Data::CommandType::StoredProcedure;
 }
 System::Data::DataSet^ NS_Comp_Data::Connect::getProc(System::String^ sSql, System::String^ sDataTableName, System::Data::SqlClient::SqlCommand^ cmd)
 {
