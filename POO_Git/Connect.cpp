@@ -22,7 +22,7 @@ System::Data::DataSet^ NS_Comp_Data::Connect::getProc(System::String^ sSql, Syst
     this->oDs->Clear();
     this->sSql = sSql;
     oCmd->CommandType = System::Data::CommandType::StoredProcedure;
-    this->oCmd->CommandText = this->sSql;
+    this->oCmd->CommandText = this->sSql;    
     this->oDA->SelectCommand = this->oCmd;
     this->oDA->Fill(this->oDs, sDataTableName);
     return this->oDs;

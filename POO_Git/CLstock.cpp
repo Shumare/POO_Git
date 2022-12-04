@@ -12,6 +12,7 @@ System::Data::DataSet^ NS_Comp_Svc::CLstock::NewArticles(System::String^ dataTab
 	System::String^ sql;
 	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
 	
+	//Conversion String^ en leurs valeur de la variable sql
 	int numberC = System::Convert::ToInt32(number);
 	int htC = System::Convert::ToInt32(htprice);
 	int tvaC = System::Convert::ToInt32(tva);
@@ -29,7 +30,7 @@ System::Data::DataSet^ NS_Comp_Svc::CLstock::NewArticles(System::String^ dataTab
 	setStockArt(stockC);
 	setReplishmentArt(replishmentC);
 	setIdColor(idcolorC);
-	//System::Data::SqlDbType::
+	
 	sql = this->oMappTB->NewArticles();
 	cmd->Parameters->Add("@name_art", System::Data::SqlDbType::NVarChar)->Value = this->name_art;
 	cmd->Parameters->Add("@number_art", System::Data::SqlDbType::Int)->Value = this->number_art;
@@ -44,6 +45,46 @@ System::Data::DataSet^ NS_Comp_Svc::CLstock::NewArticles(System::String^ dataTab
 	
 	return this->oCad->getProc(sql, dataTableName, cmd);
 }
+
+System::Data::DataSet^ NS_Comp_Svc::CLstock::DeleteArticles(System::String^ dataTableName,System::String^ idarticles)
+{
+	System::String^ sql;
+	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
+	
+	int idarticlesC = System::Convert::ToInt32(idarticles);
+	setIdArticles(idarticlesC);
+
+	sql = this->oMappTB->DeleteArticles();
+	cmd->Parameters->Add("@id_articles", System::Data::SqlDbType::Int)->Value = this->id_articles;
+	return this->oCad->getProc(sql, dataTableName, cmd);
+
+}
+
+System::Data::DataSet^ NS_Comp_Svc::CLstock::SelectAllArticles(System::String^ dataTableName)
+{
+	System::String^ sql;
+	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
+
+
+	sql = this->oMappTB->SelectAllArticles();
+
+	return this->oCad->getProc(sql, dataTableName, cmd);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void NS_Comp_Svc::CLstock::setNameArt(System::String^ name_art)
 {
@@ -98,3 +139,9 @@ void NS_Comp_Svc::CLstock::setIdColor(int id_color)
 	this->id_color = id_color;
 }
 int NS_Comp_Svc::CLstock::getIdColor(void) { return this->id_color; }
+
+void NS_Comp_Svc::CLstock::setIdArticles(int id_articles)
+{
+	this->id_articles = id_articles;
+}
+int NS_Comp_Svc::CLstock::getIdArticles(void) { return this->id_articles; }

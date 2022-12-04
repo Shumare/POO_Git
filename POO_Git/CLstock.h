@@ -16,11 +16,14 @@ namespace NS_Comp_Svc {
 		int stock_art;
 		int replishment_art;
 		int id_color;
+		int id_articles;
 		NS_Comp_Data::Connect^ oCad;
 		NS_Comp_Mappage::StockProc^ oMappTB;
 	public:
 		CLstock(void);
 		System::Data::DataSet^ NewArticles(System::String^, System::String^, System::String^, System::String^,System::String^,System::String^,System::String^,System::String^,System::String^,System::String^);
+		System::Data::DataSet^ DeleteArticles(System::String^,System::String^);
+		System::Data::DataSet^ SelectAllArticles(System::String^);
 		//Accesseur
 		void setNameArt(System::String^);
 		System::String^ getNameArt(void);
@@ -40,6 +43,8 @@ namespace NS_Comp_Svc {
 		int getReplishmentArt(void);
 		void setIdColor(int);
 		int getIdColor(void);
+		void setIdArticles(int);
+		int getIdArticles(void);
 
 		
 	};

@@ -60,7 +60,7 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
 	private: System::Windows::Forms::Button^ button4;
 
 
@@ -79,6 +79,9 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::TextBox^ textBox10;
 	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::TextBox^ textBox9;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 	private:
 		/// <summary>
@@ -98,6 +101,8 @@ namespace Interface2_1 {
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
@@ -118,10 +123,10 @@ namespace Interface2_1 {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -177,6 +182,8 @@ namespace Interface2_1 {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->label10);
+			this->groupBox2->Controls->Add(this->textBox9);
 			this->groupBox2->Controls->Add(this->textBox8);
 			this->groupBox2->Controls->Add(this->textBox7);
 			this->groupBox2->Controls->Add(this->textBox6);
@@ -200,6 +207,24 @@ namespace Interface2_1 {
 			this->groupBox2->Size = System::Drawing::Size(520, 296);
 			this->groupBox2->TabIndex = 8;
 			this->groupBox2->TabStop = false;
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(6, 21);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(62, 17);
+			this->label10->TabIndex = 27;
+			this->label10->Text = L"Id Article";
+			this->label10->Click += gcnew System::EventHandler(this, &Stock::label10_Click);
+			// 
+			// textBox9
+			// 
+			this->textBox9->Location = System::Drawing::Point(187, 18);
+			this->textBox9->Name = L"textBox9";
+			this->textBox9->Size = System::Drawing::Size(327, 22);
+			this->textBox9->TabIndex = 26;
+			this->textBox9->TextChanged += gcnew System::EventHandler(this, &Stock::textBox9_TextChanged);
 			// 
 			// textBox8
 			// 
@@ -377,17 +402,6 @@ namespace Interface2_1 {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Stock::button2_Click);
 			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(620, 12);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(719, 381);
-			this->dataGridView1->TabIndex = 18;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Stock::dataGridView1_CellContentClick);
-			// 
 			// button4
 			// 
 			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
@@ -421,16 +435,26 @@ namespace Interface2_1 {
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &Stock::button5_Click);
 			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(568, 29);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->Size = System::Drawing::Size(771, 348);
+			this->dataGridView1->TabIndex = 22;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Stock::dataGridView1_CellContentClick_1);
+			// 
 			// Stock
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Silver;
 			this->ClientSize = System::Drawing::Size(1382, 553);
+			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button4);
-			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->groupBox2);
@@ -488,6 +512,7 @@ namespace Interface2_1 {
 
 		   //Button DELETE
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->DeleteArticles("Delete", this->textBox9->Text);
 	}
 
 		   //Buttoon SAVE
@@ -497,18 +522,23 @@ namespace Interface2_1 {
 		   //Afficher la/les tables
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
+		   //Bouton LOAD
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dataGridView1->Refresh();
+		this->dataGridView1->DataSource = this->oSvc->SelectAllArticles("rsl");
+		this->dataGridView1->DataMember = "rsl";
 	}
 private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	this->dataGridView1->Refresh();
-	this->button1->Text = System::Convert::ToString(this->textBox2->Text);
-	this->dataGridView1->DataSource = this->oSvc->NewArticles("Afficher", this->textBox2->Text, this->textBox3->Text, this->textBox1->Text, this->textBox10->Text, this->textBox5->Text, this->textBox6->Text, this->textBox7->Text, this->textBox8->Text, this->textBox4->Text );;
+	this->oSvc->NewArticles("New", this->textBox2->Text, this->textBox3->Text, this->textBox1->Text, this->textBox10->Text, this->textBox5->Text, this->textBox6->Text, this->textBox7->Text, this->textBox8->Text, this->textBox4->Text );;
 	//this->dataGridView1->DataMember = "Afficher";
 }
+
+
+
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox10_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -526,6 +556,12 @@ private: System::Void textBox7_TextChanged_1(System::Object^ sender, System::Eve
 private: System::Void textBox8_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox4_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox9_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void dataGridView1_CellContentClick_1(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 };
 }
