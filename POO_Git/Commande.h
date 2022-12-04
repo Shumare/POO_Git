@@ -490,7 +490,7 @@ namespace Interface2_1 {
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		
 		this->dataGridView1->Refresh();
-		this->dataGridView1->DataSource = this->oSvc->SelectTout("rsl");;
+		this->dataGridView1->DataSource = this->oSvc->SelectTout("rsl");
 		this->dataGridView1->DataMember = "rsl";
 	}
 };

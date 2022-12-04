@@ -1,6 +1,7 @@
 #pragma once
 #include "Sup.h"
 #include "Pers.h"
+#include "CLconnection.h"
 namespace Interface2_1 {
 
 	using namespace System;
@@ -35,7 +36,7 @@ namespace Interface2_1 {
 				delete components;
 			}
 		}
-	
+	private: NS_Comp_Svc::CLconnection^ oSvc = gcnew NS_Comp_Svc::CLconnection;
 	private: System::Windows::Forms::Button^ button1;
 	protected:
 	private: System::Windows::Forms::Button^ button2;
@@ -45,6 +46,7 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Button^ button3;
+
 
 
 
@@ -110,9 +112,9 @@ namespace Interface2_1 {
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(498, 191);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(46, 17);
+			this->label2->Size = System::Drawing::Size(69, 17);
 			this->label2->TabIndex = 3;
-			this->label2->Text = L"label2";
+			this->label2->Text = L"Password";
 			this->label2->Click += gcnew System::EventHandler(this, &Connection::label2_Click);
 			// 
 			// textBox1
@@ -134,7 +136,7 @@ namespace Interface2_1 {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(997, 373);
+			this->dataGridView1->Location = System::Drawing::Point(744, 276);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->Size = System::Drawing::Size(240, 150);
@@ -189,6 +191,7 @@ namespace Interface2_1 {
 	//test
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		
+		
 	}
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
@@ -203,6 +206,54 @@ private: System::Void textBox2_TextChanged(System::Object^ sender, System::Event
 private: System::Void dataGridView1_CellContentClick_1(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->Refresh();
+	this->dataGridView1->DataSource = this->oSvc->SelectIdentifiant("rsl");
+	this->dataGridView1->DataMember = "rsl";
+
+	System::String^ foo;
+	
+	for (int i = 0; i < this->dataGridView1->RowCount-1; i++) {
+		foo = (System::String^)this->dataGridView1->Rows[i]->Cells[0]->Value;
+		String^ Ident = foo->Trim();
+		if (this->textBox1->Text == Ident) {
+			foo = (System::String^)this->dataGridView1->Rows[i]->Cells[1]->Value;
+			String^ Password = foo->Trim();
+			if (this->textBox2->Text == Password) {
+				int idpeople;
+				idpeople = (int)this->dataGridView1->Rows[i]->Cells[2]->Value;
+				//
+				this->dataGridView1->Refresh();
+				this->dataGridView1->DataSource = this->oSvc->SelectIdentifiantManager("rsl",idpeople);
+				this->dataGridView1->DataMember = "rsl";
+				
+				if (this->dataGridView1->RowCount == 1) {
+					Pers^ P1 = gcnew Pers();
+					P1->Show();
+					this->Hide();
+				}
+				else {
+					Sup^ S1 = gcnew Sup();
+					S1->Show();
+					this->Hide();
+				}
+				
+				
+				
+					
+				
+				
+
+				
+				// : 'La référence d'objet n'est pas définie à une instance d'un objet.'
+				//System::String^ idmanager = System::Convert::ToString(y);
+				//this->label1->Text = idmanager;
+				break;
+			}
+			
+
+		}
+
+	}
 }
 };
 }

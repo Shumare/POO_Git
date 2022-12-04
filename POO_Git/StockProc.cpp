@@ -24,3 +24,13 @@ System::String^ NS_Comp_Mappage::StockProc::UpdateArticles(void) {
 
 	return "dbo.UpdateArticles";
 }
+
+System::String^ NS_Comp_Mappage::StockProc::SelectIdentifiant(void) {
+
+	return "dbo.SelectIdentifiant";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::SelectIdentifiantManager(void) {
+
+	return "dbo.SelectIdentifiantManager";
+}
