@@ -24,6 +24,7 @@ namespace NS_Comp_Svc {
 		System::Data::DataSet^ NewArticles(System::String^, System::String^, System::String^, System::String^,System::String^,System::String^,System::String^,System::String^,System::String^,System::String^);
 		System::Data::DataSet^ DeleteArticles(System::String^,System::String^);
 		System::Data::DataSet^ SelectAllArticles(System::String^);
+		System::Data::DataSet^ UpdateArticles(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 		//Accesseur
 		void setNameArt(System::String^);
 		System::String^ getNameArt(void);

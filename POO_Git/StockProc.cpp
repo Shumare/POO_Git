@@ -19,3 +19,8 @@ System::String^ NS_Comp_Mappage::StockProc::SelectAllArticles(void) {
 
 	return "dbo.SelectAllArticles";
 }
+
+System::String^ NS_Comp_Mappage::StockProc::UpdateArticles(void) {
+
+	return "dbo.UpdateArticles";
+}

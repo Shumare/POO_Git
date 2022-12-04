@@ -69,7 +69,7 @@ namespace Interface2_1 {
 
 
 	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button5;
+
 	private: System::Windows::Forms::TextBox^ textBox8;
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::TextBox^ textBox6;
@@ -125,7 +125,6 @@ namespace Interface2_1 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
@@ -398,7 +397,7 @@ namespace Interface2_1 {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(177, 33);
 			this->button2->TabIndex = 17;
-			this->button2->Text = L"Save";
+			this->button2->Text = L"Update";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Stock::button2_Click);
 			// 
@@ -424,17 +423,6 @@ namespace Interface2_1 {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &Stock::button3_Click_1);
 			// 
-			// button5
-			// 
-			this->button5->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button5->Location = System::Drawing::Point(355, 454);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(177, 33);
-			this->button5->TabIndex = 21;
-			this->button5->Text = L"Update";
-			this->button5->UseVisualStyleBackColor = true;
-			this->button5->Click += gcnew System::EventHandler(this, &Stock::button5_Click);
-			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
@@ -452,7 +440,6 @@ namespace Interface2_1 {
 			this->BackColor = System::Drawing::Color::Silver;
 			this->ClientSize = System::Drawing::Size(1382, 553);
 			this->Controls->Add(this->dataGridView1);
-			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button2);
@@ -515,8 +502,9 @@ namespace Interface2_1 {
 		this->oSvc->DeleteArticles("Delete", this->textBox9->Text);
 	}
 
-		   //Buttoon SAVE
+		   //Buttoon UPDATE
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->UpdateArticles("Update", this->textBox9->Text, this->textBox2->Text, this->textBox3->Text, this->textBox1->Text, this->textBox10->Text, this->textBox5->Text, this->textBox6->Text, this->textBox7->Text, this->textBox8->Text, this->textBox4->Text);;
 	}
 
 		   //Afficher la/les tables

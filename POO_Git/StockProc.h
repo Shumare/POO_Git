@@ -13,6 +13,7 @@ namespace NS_Comp_Mappage
 		System::String^ NewArticles(void);
 		System::String^ DeleteArticles(void);
 		System::String^ SelectAllArticles(void);
+		System::String^ UpdateArticles(void);
 
 		
 	};

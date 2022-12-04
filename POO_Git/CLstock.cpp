@@ -72,7 +72,46 @@ System::Data::DataSet^ NS_Comp_Svc::CLstock::SelectAllArticles(System::String^ d
 
 }
 
+System::Data::DataSet^ NS_Comp_Svc::CLstock::UpdateArticles(System::String^ dataTableName, System::String^ idarticles, System::String^ name, System::String^ number, System::String^ type, System::String^ reference, System::String^ htprice, System::String^ tva, System::String^ stock, System::String^ replishment, System::String^ idcolor)
+{
+	System::String^ sql;
+	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
 
+	//Conversion String^ en leurs valeur de la variable sql
+	int idarticlesC = System::Convert::ToInt32(idarticles);
+	int numberC = System::Convert::ToInt32(number);
+	int htC = System::Convert::ToInt32(htprice);
+	int tvaC = System::Convert::ToInt32(tva);
+	int stockC = System::Convert::ToInt32(stock);
+	int replishmentC = System::Convert::ToInt32(replishment);
+	int idcolorC = System::Convert::ToInt32(idcolor);
+
+	setIdArticles(idarticlesC);
+	setNameArt(System::Convert::ToString(name));
+	setNumberArt(numberC);
+	setTypeArt(System::Convert::ToString(type));
+	setReferenceArt(System::Convert::ToString(reference));
+	setHtPriceArt(htC);
+	setTvaArt(tvaC);
+	setStockArt(stockC);
+	setReplishmentArt(replishmentC);
+	setIdColor(idcolorC);
+
+	sql = this->oMappTB->UpdateArticles();
+	cmd->Parameters->Add("@id_articles", System::Data::SqlDbType::NVarChar)->Value = this->id_articles;
+	cmd->Parameters->Add("@name_art", System::Data::SqlDbType::NVarChar)->Value = this->name_art;
+	cmd->Parameters->Add("@number_art", System::Data::SqlDbType::Int)->Value = this->number_art;
+	cmd->Parameters->Add("@type_art", System::Data::SqlDbType::NVarChar)->Value = this->type_art;
+	cmd->Parameters->Add("@reference_art", System::Data::SqlDbType::NVarChar)->Value = this->reference_art;
+	cmd->Parameters->Add("@htprice_art", System::Data::SqlDbType::Int)->Value = this->htprice_art;
+	cmd->Parameters->Add("@tva_art", System::Data::SqlDbType::Int)->Value = this->tva_art;
+	cmd->Parameters->Add("@stock_art", System::Data::SqlDbType::Int)->Value = this->stock_art;
+	cmd->Parameters->Add("@replishment_art", System::Data::SqlDbType::Int)->Value = this->replishment_art;
+	cmd->Parameters->Add("@id_color", System::Data::SqlDbType::Int)->Value = this->id_color;
+
+
+	return this->oCad->getProc(sql, dataTableName, cmd);
+}
 
 
 
