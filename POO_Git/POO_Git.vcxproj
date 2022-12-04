@@ -121,6 +121,7 @@
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="CLcommande.cpp" />
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="CLstock.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Connect.cpp" />
     <ClCompile Include="Connection.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="Client.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CLstock.h" />
     <ClInclude Include="Commande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
