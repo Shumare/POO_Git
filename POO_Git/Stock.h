@@ -515,6 +515,11 @@ namespace Interface2_1 {
 		this->dataGridView1->Refresh();
 		this->dataGridView1->DataSource = this->oSvc->SelectAllArticles("rsl");
 		this->dataGridView1->DataMember = "rsl";
+		String^ foo;
+		for (int i = 0; i < this->dataGridView1->RowCount - 1; i++) {
+			foo = (System::String^)this->dataGridView1->Rows[i]->Cells[1]->Value;
+			comboBox1->Items->Add(foo);
+		}
 	}
 private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
 }
