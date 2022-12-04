@@ -1,4 +1,5 @@
 #pragma once
+#include"CLemployees.h"
 
 namespace Interface2_1 {
 
@@ -22,7 +23,8 @@ namespace Interface2_1 {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-
+	public: NS_Comp_Svc::CLemployees^ oSvc = gcnew NS_Comp_Svc::CLemployees;
+	public: System::Data::DataSet^ oDs;
 	protected:
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
@@ -154,6 +156,7 @@ namespace Interface2_1 {
 			this->groupBox1->Size = System::Drawing::Size(520, 95);
 			this->groupBox1->TabIndex = 4;
 			this->groupBox1->TabStop = false;
+			this->groupBox1->Enter += gcnew System::EventHandler(this, &Personnel::groupBox1_Enter);
 			// 
 			// radioButton2
 			// 
@@ -477,6 +480,8 @@ namespace Interface2_1 {
 		}
 #pragma endregion
 		//Choix Personnel 
+	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
+	}
 	private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (radioButton1->Checked == true)
 		{
@@ -532,6 +537,9 @@ namespace Interface2_1 {
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dataGridView1->Refresh();
+		this->dataGridView1->DataSource = this->oSvc->SelectTout("rsl");
+		this->dataGridView1->DataMember = "rsl";
 	}
 };
 }

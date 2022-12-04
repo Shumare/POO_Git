@@ -3,9 +3,9 @@
 
 namespace NS_Comp_Data
 {
-    ref class Connect 
+    ref class Connect
     {
-    private:
+    public:
         System::String^ sSql;
         System::String^ sCnx;
         System::Data::SqlClient::SqlConnection^ oCnx;
@@ -14,8 +14,7 @@ namespace NS_Comp_Data
         System::Data::DataSet^ oDs;
     public:
         Connect(void);
-        System::Data::DataSet^ getRows(System::String^, System::String^);
-        void actionRows(System::String^);
+        System::Data::DataSet^ getProc(System::String^, System::String^);
+        void LanceProc(System::String^);
     };
 }
-

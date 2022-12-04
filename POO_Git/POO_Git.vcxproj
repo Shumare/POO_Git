@@ -119,6 +119,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CLclient.cpp" />
+    <ClCompile Include="ClCreateEmp_Address.cpp" />
+    <ClCompile Include="ClCreateEmp_City.cpp" />
+    <ClCompile Include="ClCreateEmp_Country.cpp" />
+    <ClCompile Include="ClCreateEmp_Own.cpp" />
+    <ClCompile Include="ClCreateEmp_Employee.cpp" />
+    <ClCompile Include="ClCreateEmp_People.cpp" />
+    <ClCompile Include="ClCreateEmp_Users.cpp" />
+    <ClCompile Include="CLemployees.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Connect.cpp" />
@@ -130,9 +139,19 @@
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="Stats.cpp" />
     <ClCompile Include="Stock.cpp" />
+    <ClCompile Include="StockProc.cpp" />
     <ClCompile Include="Sup.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CLclient.h" />
+    <ClInclude Include="ClCreateEmp_Address.h" />
+    <ClInclude Include="ClCreateEmp_City.h" />
+    <ClInclude Include="ClCreateEmp_Country.h" />
+    <ClInclude Include="ClCreateEmp_Own.h" />
+    <ClInclude Include="ClCreateEmp_Employee.h" />
+    <ClInclude Include="ClCreateEmp_People.h" />
+    <ClInclude Include="ClCreateEmp_Users.h" />
+    <ClInclude Include="CLemployees.h" />
     <ClInclude Include="Client.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -159,6 +178,7 @@
     <ClInclude Include="Stock.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="StockProc.h" />
     <ClInclude Include="Sup.h">
       <FileType>CppForm</FileType>
     </ClInclude>
