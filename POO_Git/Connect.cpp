@@ -16,8 +16,10 @@ NS_Comp_Data::Connect::Connect(void)
 
     this->oCmd->CommandType = System::Data::CommandType::StoredProcedure;
 }
-System::Data::DataSet^ NS_Comp_Data::Connect::getProc(System::String^ sSql, System::String^ sDataTableName)
+System::Data::DataSet^ NS_Comp_Data::Connect::getProc(System::String^ sSql, System::String^ sDataTableName, System::Data::SqlClient::SqlCommand^ cmd)
 {
+    this->oCmd = cmd;
+    this->oCmd->Connection = this->oCnx;
     this->oDs->Clear();
     this->sSql = sSql;
     oCmd->CommandType = System::Data::CommandType::StoredProcedure;

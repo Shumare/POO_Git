@@ -11,8 +11,11 @@ System::Data::DataSet^ NS_Comp_Svc::CLcommande::SelectTout(System::String^ dataT
 {
 
 	System::String^ sql;
+	
 	sql = this->oMappTB->SelectAllCommision();
-	return this->oCad->getProc(sql, dataTableName);
+	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
+	cmd->Parameters->Add("@id_commission", System::Data::SqlDbType::Int)->Value = 1;
+	return this->oCad->getProc(sql, dataTableName,cmd);
 }
 
 
