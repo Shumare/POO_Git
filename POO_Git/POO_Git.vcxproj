@@ -121,6 +121,15 @@
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="CLcommande.cpp" />
     <ClCompile Include="CLconnection.cpp" />
+
+    <ClCompile Include="ClCreateEmp_Address.cpp" />
+    <ClCompile Include="ClCreateEmp_City.cpp" />
+    <ClCompile Include="ClCreateEmp_Country.cpp" />
+    <ClCompile Include="ClCreateEmp_Employee.cpp" />
+    <ClCompile Include="ClCreateEmp_Own.cpp" />
+    <ClCompile Include="ClCreateEmp_People.cpp" />
+    <ClCompile Include="ClCreateEmp_Users.cpp" />
+
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="CLstock.cpp" />
     <ClCompile Include="Commande.cpp" />
@@ -139,6 +148,15 @@
   <ItemGroup>
     <ClInclude Include="CLcommande.h" />
     <ClInclude Include="CLconnection.h" />
+
+    <ClInclude Include="ClCreateEmp_Address.h" />
+    <ClInclude Include="ClCreateEmp_City.h" />
+    <ClInclude Include="ClCreateEmp_Country.h" />
+    <ClInclude Include="ClCreateEmp_Employee.h" />
+    <ClInclude Include="ClCreateEmp_Own.h" />
+    <ClInclude Include="ClCreateEmp_People.h" />
+    <ClInclude Include="ClCreateEmp_Users.h" />
+
     <ClInclude Include="Client.h">
       <FileType>CppForm</FileType>
     </ClInclude>

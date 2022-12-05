@@ -18,4 +18,3 @@ namespace NS_Comp_Data
         void LanceProc(System::String^);
     };
 }
-

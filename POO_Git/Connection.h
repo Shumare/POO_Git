@@ -12,7 +12,7 @@ namespace Interface2_1 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de Connection
+	/// Description rÃ©sumÃ©e de Connection
 	/// </summary>
 	public ref class Connection : public System::Windows::Forms::Form
 	{
@@ -27,7 +27,7 @@ namespace Interface2_1 {
 
 	protected:
 		/// <summary>
-		/// Nettoyage des ressources utilisées.
+		/// Nettoyage des ressources utilisÃ©es.
 		/// </summary>
 		~Connection()
 		{
@@ -53,14 +53,14 @@ namespace Interface2_1 {
 
 	private:
 		/// <summary>
-		/// Variable nécessaire au concepteur.
+		/// Variable nÃ©cessaire au concepteur.
 		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
-		/// le contenu de cette méthode avec l'éditeur de code.
+		/// MÃ©thode requise pour la prise en charge du concepteur - ne modifiez pas
+		/// le contenu de cette mÃ©thode avec l'Ã©diteur de code.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -82,7 +82,7 @@ namespace Interface2_1 {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(250, 350);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"Supérieur";
+			this->button1->Text = L"SupÃ©rieur";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Connection::button1_Click);
 			// 
@@ -188,8 +188,9 @@ namespace Interface2_1 {
 		this->Hide();
 	}
 
-	//test
+		   //test
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+
 		
 		
 	}
@@ -245,7 +246,7 @@ private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^
 				
 
 				
-				// : 'La référence d'objet n'est pas définie à une instance d'un objet.'
+				//Â : 'La rÃ©fÃ©rence d'objet n'est pas dÃ©finie Ã  une instance d'un objet.'
 				//System::String^ idmanager = System::Convert::ToString(y);
 				//this->label1->Text = idmanager;
 				break;
