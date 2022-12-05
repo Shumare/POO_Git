@@ -14,7 +14,7 @@ namespace NS_Comp_Data
         System::Data::DataSet^ oDs;
     public:
         Connect(void);
-        System::Data::DataSet^ getProc(System::String^, System::String^);
+        System::Data::DataSet^ getProc(System::String^, System::String^, System::Data::SqlClient::SqlCommand^);
         void LanceProc(System::String^);
     };
 }
