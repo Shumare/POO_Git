@@ -5,7 +5,7 @@
 
 NS_Comp_Data::Connect::Connect(void)
 {
-    this->sCnx = "Data Source = MSI\\MSSQL_BAPTISTE;Initial Catalog = DB_POO;Persist Security Info = True;User ID = Manager;Password = password";
+    this->sCnx = "Data Source =PC-PORTABLE-TIM\\MSSQL_TIMEO;Initial Catalog = DB_POO;Persist Security Info = True;User ID = Manager;Password = password";
 
     this->sSql = "Rien";
 
@@ -14,19 +14,20 @@ NS_Comp_Data::Connect::Connect(void)
     this->oDA = gcnew System::Data::SqlClient::SqlDataAdapter();
     this->oDs = gcnew System::Data::DataSet();
 
-    this->oCmd->CommandType = System::Data::CommandType::Text;
 }
-System::Data::DataSet^ NS_Comp_Data::Connect::getRows(System::String^ sSql, System::String^ sDataTableName)
+System::Data::DataSet^ NS_Comp_Data::Connect::getProc(System::String^ sSql, System::String^ sDataTableName, System::Data::SqlClient::SqlCommand^ cmd)
 {
+    this->oCmd = cmd;
+    this->oCmd->Connection = this->oCnx;
     this->oDs->Clear();
     this->sSql = sSql;
-    this->oCmd->CommandText = this->sSql;
+    oCmd->CommandType = System::Data::CommandType::StoredProcedure;
+    this->oCmd->CommandText = this->sSql;    
     this->oDA->SelectCommand = this->oCmd;
     this->oDA->Fill(this->oDs, sDataTableName);
-
     return this->oDs;
 }
-void NS_Comp_Data::Connect::actionRows(System::String^ sSql)
+void NS_Comp_Data::Connect::LanceProc(System::String^ sSql)
 {
 
     this->sSql = sSql;

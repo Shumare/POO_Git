@@ -119,7 +119,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CLcommande.cpp" />
+    <ClCompile Include="CLconnection.cpp" />
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="CLstock.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Connect.cpp" />
     <ClCompile Include="Connection.cpp" />
@@ -130,12 +133,16 @@
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="Stats.cpp" />
     <ClCompile Include="Stock.cpp" />
+    <ClCompile Include="StockProc.cpp" />
     <ClCompile Include="Sup.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CLcommande.h" />
+    <ClInclude Include="CLconnection.h" />
     <ClInclude Include="Client.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CLstock.h" />
     <ClInclude Include="Commande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -146,7 +153,6 @@
     <ClInclude Include="Contain.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="pch.h" />
     <ClInclude Include="Pers.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -159,6 +165,7 @@
     <ClInclude Include="Stock.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="StockProc.h" />
     <ClInclude Include="Sup.h">
       <FileType>CppForm</FileType>
     </ClInclude>

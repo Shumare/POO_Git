@@ -1,6 +1,6 @@
 #pragma once
 #include "Contain.h"
-
+#include "CLcommande.h"
 namespace Interface2_1 {
 
 	using namespace System;
@@ -35,6 +35,8 @@ namespace Interface2_1 {
 				delete components;
 			}
 		}
+	private: NS_Comp_Svc::CLcommande^ oSvc = gcnew NS_Comp_Svc::CLcommande;
+	public: System::Data::DataSet^ oDs;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	protected:
 	private: System::Windows::Forms::RadioButton^ radioButton2;
@@ -486,6 +488,10 @@ namespace Interface2_1 {
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+		this->dataGridView1->Refresh();
+		this->dataGridView1->DataSource = this->oSvc->SelectTout("rsl");
+		this->dataGridView1->DataMember = "rsl";
 	}
 };
 }
