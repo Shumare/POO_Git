@@ -229,13 +229,14 @@ private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^
 				if (this->dataGridView1->RowCount == 1) {
 					Pers^ P1 = gcnew Pers();
 					P1->Show();
-					this->Hide();
+					//this->Hide();
 				}
 				else {
 					Sup^ S1 = gcnew Sup();
 					S1->Show();
-					this->Hide();
+					//this->Hide();
 				}
+				
 				
 				
 				

@@ -518,7 +518,8 @@ namespace Interface2_1 {
 		String^ foo;
 		for (int i = 0; i < this->dataGridView1->RowCount - 1; i++) {
 			foo = (System::String^)this->dataGridView1->Rows[i]->Cells[1]->Value;
-			comboBox1->Items->Add(foo);
+			String^ result = foo->Trim();
+			comboBox1->Items->Add(result);
 		}
 	}
 private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
