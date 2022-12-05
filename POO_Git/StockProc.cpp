@@ -36,6 +36,11 @@ System::String^ NS_Comp_Mappage::StockProc::CreateEmpCit(void)
 	return "dbo.CreateEmp_City";
 }
 
+System::String^ NS_Comp_Mappage::StockProc::ReadEmpCit(void)
+{
+	return "dbo.ReadEmp_City";
+}
+
 System::String^ NS_Comp_Mappage::StockProc::CreateEmpCou(void)
 {
 	return "dbo.CreateEmp_Country";

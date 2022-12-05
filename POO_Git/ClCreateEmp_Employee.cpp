@@ -9,6 +9,8 @@ NS_Comp_Svc::ClCreateEmp_Employee::ClCreateEmp_Employee(void)
 System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Employee::CreateEmp_Emp(System::String^ dataTableName)
 {
 	System::String^ sql;
+	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
+
 	sql = this->oMappTB->CreateEmpEmp();
-	return this->oCad->getProc(sql, dataTableName);
+	return this->oCad->getProc(sql, dataTableName, cmd);
 }

@@ -23,8 +23,10 @@ namespace Interface2_1 {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-	public: NS_Comp_Svc::CLemployees^ oSvc = gcnew NS_Comp_Svc::CLemployees;
-	public: System::Data::DataSet^ oDs;
+	private: NS_Comp_Svc::CLemployees^ oSvc = gcnew NS_Comp_Svc::CLemployees;
+	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	private: System::Windows::Forms::DataGridView^ dataGridView3;
+	private: System::Data::DataSet^ oDs;
 	protected:
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
@@ -122,9 +124,13 @@ namespace Interface2_1 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// comboBox1
@@ -455,12 +461,38 @@ namespace Interface2_1 {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &Personnel::button3_Click);
 			// 
+			// dataGridView2
+			// 
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->Location = System::Drawing::Point(1104, 430);
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->RowHeadersWidth = 51;
+			this->dataGridView2->RowTemplate->Height = 24;
+			this->dataGridView2->Size = System::Drawing::Size(29, 27);
+			this->dataGridView2->TabIndex = 10;
+			this->dataGridView2->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Personnel::dataGridView2_CellContentClick);
+			this->dataGridView2->Hide();
+			// 
+			// dataGridView3
+			// 
+			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView3->Location = System::Drawing::Point(1069, 430);
+			this->dataGridView3->Name = L"dataGridView3";
+			this->dataGridView3->RowHeadersWidth = 51;
+			this->dataGridView3->RowTemplate->Height = 24;
+			this->dataGridView3->Size = System::Drawing::Size(29, 27);
+			this->dataGridView3->TabIndex = 11;
+			this->dataGridView3->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Personnel::dataGridView3_CellContentClick);
+			this->dataGridView3->Hide();
+			// 
 			// Personnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Silver;
 			this->ClientSize = System::Drawing::Size(1382, 553);
+			this->Controls->Add(this->dataGridView3);
+			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button2);
@@ -475,6 +507,8 @@ namespace Interface2_1 {
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -540,6 +574,10 @@ namespace Interface2_1 {
 		this->dataGridView1->Refresh();
 		this->dataGridView1->DataSource = this->oSvc->SelectTout("rsl");
 		this->dataGridView1->DataMember = "rsl";
+	}
+	private: System::Void dataGridView2_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	}
+	private: System::Void dataGridView3_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
 };
 }
