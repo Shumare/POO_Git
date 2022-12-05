@@ -119,16 +119,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
-    <ClCompile Include="CLclient.cpp" />
+    <ClCompile Include="CLcommande.cpp" />
+    <ClCompile Include="CLconnection.cpp" />
     <ClCompile Include="ClCreateEmp_Address.cpp" />
     <ClCompile Include="ClCreateEmp_City.cpp" />
     <ClCompile Include="ClCreateEmp_Country.cpp" />
-    <ClCompile Include="ClCreateEmp_Own.cpp" />
     <ClCompile Include="ClCreateEmp_Employee.cpp" />
+    <ClCompile Include="ClCreateEmp_Own.cpp" />
     <ClCompile Include="ClCreateEmp_People.cpp" />
     <ClCompile Include="ClCreateEmp_Users.cpp" />
-    <ClCompile Include="CLemployees.cpp" />
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="CLstock.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Connect.cpp" />
     <ClCompile Include="Connection.cpp" />
@@ -143,18 +144,19 @@
     <ClCompile Include="Sup.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CLclient.h" />
+    <ClInclude Include="CLcommande.h" />
+    <ClInclude Include="CLconnection.h" />
     <ClInclude Include="ClCreateEmp_Address.h" />
     <ClInclude Include="ClCreateEmp_City.h" />
     <ClInclude Include="ClCreateEmp_Country.h" />
-    <ClInclude Include="ClCreateEmp_Own.h" />
     <ClInclude Include="ClCreateEmp_Employee.h" />
+    <ClInclude Include="ClCreateEmp_Own.h" />
     <ClInclude Include="ClCreateEmp_People.h" />
     <ClInclude Include="ClCreateEmp_Users.h" />
-    <ClInclude Include="CLemployees.h" />
     <ClInclude Include="Client.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CLstock.h" />
     <ClInclude Include="Commande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -165,7 +167,6 @@
     <ClInclude Include="Contain.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="pch.h" />
     <ClInclude Include="Pers.h">
       <FileType>CppForm</FileType>
     </ClInclude>
