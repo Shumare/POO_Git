@@ -121,6 +121,7 @@
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="CLcommande.cpp" />
     <ClCompile Include="CLconnection.cpp" />
+    <ClCompile Include="CLcontain.cpp" />
     <ClCompile Include="ClCreateEmp_Address.cpp" />
     <ClCompile Include="ClCreateEmp_City.cpp" />
     <ClCompile Include="ClCreateEmp_Country.cpp" />
@@ -147,6 +148,7 @@
   <ItemGroup>
     <ClInclude Include="CLcommande.h" />
     <ClInclude Include="CLconnection.h" />
+    <ClInclude Include="CLcontain.h" />
     <ClInclude Include="ClCreateEmp_Address.h" />
     <ClInclude Include="ClCreateEmp_City.h" />
     <ClInclude Include="ClCreateEmp_Country.h" />

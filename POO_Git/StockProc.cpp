@@ -100,3 +100,32 @@ System::String^ NS_Comp_Mappage::StockProc::SelectIdentifiantManager(void) {
 
 	return "dbo.SelectIdentifiantManager";
 }
+
+System::String^ NS_Comp_Mappage::StockProc::NewContain(void) {
+
+	return "dbo.NewContain";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::NewCommissionEmpty(void) {
+
+	return "dbo.NewCommissionEmpty";
+
+}
+
+System::String^ NS_Comp_Mappage::StockProc::DeleteCommission(void) {
+
+	return "dbo.DeleteCommission";
+
+}
+
+System::String^ NS_Comp_Mappage::StockProc::SelectComInfo(void) {
+
+	return "dbo.SelectComInfo";
+
+}
+
+System::String^ NS_Comp_Mappage::StockProc::SelectComInc(void) {
+
+	return "dbo.SelectComInc";
+
+}
