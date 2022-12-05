@@ -9,6 +9,8 @@ NS_Comp_Svc::ClCreateEmp_Own::ClCreateEmp_Own(void)
 System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Own::CreateEmp_Own(System::String^ dataTableName)
 {
 	System::String^ sql;
+	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
+
 	sql = this->oMappTB->CreateEmpOwn();
-	return this->oCad->getProc(sql, dataTableName);
+	return this->oCad->getProc(sql, dataTableName, cmd);
 }

@@ -24,6 +24,7 @@ namespace NS_Comp_Mappage
 		System::String^ CreateEmpAdd(void);
 
 		System::String^ CreateEmpCit(void);
+		System::String^ ReadEmpCit(void);
 
 		System::String^ CreateEmpCou(void);
 

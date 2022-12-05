@@ -13,4 +13,3 @@ namespace NS_Comp_Svc {
 		System::Data::DataSet^ SelectTout(System::String^);
 	};
 }
-

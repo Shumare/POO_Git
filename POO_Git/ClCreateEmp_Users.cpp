@@ -9,6 +9,8 @@ NS_Comp_Svc::ClCreateEmp_Users::ClCreateEmp_Users(void)
 System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Users::CreateEmp_Use(System::String^ dataTableName)
 {
 	System::String^ sql;
+	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
+
 	sql = this->oMappTB->CreateEmpUse();
-	return this->oCad->getProc(sql, dataTableName);
+	return this->oCad->getProc(sql, dataTableName, cmd);
 }
