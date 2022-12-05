@@ -12,7 +12,7 @@ namespace Interface2_1 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de Connection
+	/// Description rÃ©sumÃ©e de Connection
 	/// </summary>
 	public ref class Connection : public System::Windows::Forms::Form
 	{
@@ -27,7 +27,7 @@ namespace Interface2_1 {
 
 	protected:
 		/// <summary>
-		/// Nettoyage des ressources utilisées.
+		/// Nettoyage des ressources utilisÃ©es.
 		/// </summary>
 		~Connection()
 		{
@@ -53,14 +53,14 @@ namespace Interface2_1 {
 
 	private:
 		/// <summary>
-		/// Variable nécessaire au concepteur.
+		/// Variable nÃ©cessaire au concepteur.
 		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
-		/// le contenu de cette méthode avec l'éditeur de code.
+		/// MÃ©thode requise pour la prise en charge du concepteur - ne modifiez pas
+		/// le contenu de cette mÃ©thode avec l'Ã©diteur de code.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -82,7 +82,7 @@ namespace Interface2_1 {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(250, 350);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"Supérieur";
+			this->button1->Text = L"SupÃ©rieur";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Connection::button1_Click);
 			// 
@@ -191,70 +191,72 @@ namespace Interface2_1 {
 		   //test
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 
-
+		
+		
 	}
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void dataGridView1_CellContentClick_1(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	}
-	private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^ e) {
-		this->dataGridView1->Refresh();
-		this->dataGridView1->DataSource = this->oSvc->SelectIdentifiant("rsl");
-		this->dataGridView1->DataMember = "rsl";
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void dataGridView1_CellContentClick_1(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->Refresh();
+	this->dataGridView1->DataSource = this->oSvc->SelectIdentifiant("rsl");
+	this->dataGridView1->DataMember = "rsl";
 
-		System::String^ foo;
-
-		for (int i = 0; i < this->dataGridView1->RowCount - 1; i++) {
-			foo = (System::String^)this->dataGridView1->Rows[i]->Cells[0]->Value;
-			String^ Ident = foo->Trim();
-			if (this->textBox1->Text == Ident) {
-				foo = (System::String^)this->dataGridView1->Rows[i]->Cells[1]->Value;
-				String^ Password = foo->Trim();
-				if (this->textBox2->Text == Password) {
-					int idpeople;
-					idpeople = (int)this->dataGridView1->Rows[i]->Cells[2]->Value;
-					//
-					this->dataGridView1->Refresh();
-					this->dataGridView1->DataSource = this->oSvc->SelectIdentifiantManager("rsl", idpeople);
-					this->dataGridView1->DataMember = "rsl";
-
-					if (this->dataGridView1->RowCount == 1) {
-						Pers^ P1 = gcnew Pers();
-						P1->Show();
-						//this->Hide();
-					}
-					else {
-						Sup^ S1 = gcnew Sup();
-						S1->Show();
-						//this->Hide();
-					}
-
-
-
-
-
-
-
-
-
-					// : 'La référence d'objet n'est pas définie à une instance d'un objet.'
-					//System::String^ idmanager = System::Convert::ToString(y);
-					//this->label1->Text = idmanager;
-					break;
+	System::String^ foo;
+	
+	for (int i = 0; i < this->dataGridView1->RowCount-1; i++) {
+		foo = (System::String^)this->dataGridView1->Rows[i]->Cells[0]->Value;
+		String^ Ident = foo->Trim();
+		if (this->textBox1->Text == Ident) {
+			foo = (System::String^)this->dataGridView1->Rows[i]->Cells[1]->Value;
+			String^ Password = foo->Trim();
+			if (this->textBox2->Text == Password) {
+				int idpeople;
+				idpeople = (int)this->dataGridView1->Rows[i]->Cells[2]->Value;
+				//
+				this->dataGridView1->Refresh();
+				this->dataGridView1->DataSource = this->oSvc->SelectIdentifiantManager("rsl",idpeople);
+				this->dataGridView1->DataMember = "rsl";
+				
+				if (this->dataGridView1->RowCount == 1) {
+					Pers^ P1 = gcnew Pers();
+					P1->Show();
+					//this->Hide();
 				}
+				else {
+					Sup^ S1 = gcnew Sup();
+					S1->Show();
+					//this->Hide();
+				}
+				
+				
+				
+				
+					
+				
+				
 
-
+				
+				//Â : 'La rÃ©fÃ©rence d'objet n'est pas dÃ©finie Ã  une instance d'un objet.'
+				//System::String^ idmanager = System::Convert::ToString(y);
+				//this->label1->Text = idmanager;
+				break;
 			}
+			
 
 		}
+
 	}
-	};
 }
+};
+}
+

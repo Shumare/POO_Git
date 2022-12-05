@@ -35,10 +35,16 @@ namespace NS_Comp_Mappage
 
 		System::String^ CreateEmpUse(void);
 
+	
+		System::String^ SelectAllCommision(void);
+		System::String^ NewArticles(void);
+		System::String^ DeleteArticles(void);
+		System::String^ SelectAllArticles(void);
+		System::String^ UpdateArticles(void);
+		System::String^ SelectIdentifiant(void);
+		System::String^ SelectIdentifiantManager(void);
 
-
-
-
+		
 	};
 
 }

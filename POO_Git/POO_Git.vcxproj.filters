@@ -87,6 +87,7 @@
     <ClCompile Include="ClCreateEmp_Users.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Connection.h">
