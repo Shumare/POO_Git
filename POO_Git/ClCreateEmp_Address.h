@@ -22,6 +22,7 @@ namespace NS_Comp_Svc {
 	public:
 		ClCreateEmp_Address(void);
 		System::Data::DataSet^ CreateEmp_Add(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		System::Data::DataSet^ UpdateEmp_Add(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 		System::Data::DataSet^ ReadEmp_Add(System::String^);
 		System::Data::DataSet^ SelectIdCity(System::String^, System::String^);
 		System::Data::DataSet^ SelectIdCountry(System::String^, System::String^);
@@ -46,6 +47,8 @@ namespace NS_Comp_Svc {
 		int getidcountry(void);
 		void setidcity(int);
 		int getidcity(void);
+		void setidaddress(int);
+		int getidaddress(void);
 	};
 }
 

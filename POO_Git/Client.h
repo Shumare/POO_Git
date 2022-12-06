@@ -104,6 +104,8 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::TextBox^ textBox12;
 	private: System::Windows::Forms::TextBox^ textBox11;
 	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Button^ button11;
+	private: System::Windows::Forms::Button^ button10;
 
 	private:
 		/// <summary>
@@ -123,6 +125,8 @@ namespace Interface2_1 {
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->button11 = (gcnew System::Windows::Forms::Button());
+			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
@@ -225,6 +229,8 @@ namespace Interface2_1 {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->button11);
+			this->groupBox2->Controls->Add(this->button10);
 			this->groupBox2->Controls->Add(this->label15);
 			this->groupBox2->Controls->Add(this->textBox12);
 			this->groupBox2->Controls->Add(this->textBox11);
@@ -265,6 +271,26 @@ namespace Interface2_1 {
 			this->groupBox2->Size = System::Drawing::Size(617, 369);
 			this->groupBox2->TabIndex = 6;
 			this->groupBox2->TabStop = false;
+			// 
+			// button11
+			// 
+			this->button11->Location = System::Drawing::Point(520, 118);
+			this->button11->Name = L"button11";
+			this->button11->Size = System::Drawing::Size(91, 25);
+			this->button11->TabIndex = 45;
+			this->button11->Text = L"Up Cus";
+			this->button11->UseVisualStyleBackColor = true;
+			this->button11->Click += gcnew System::EventHandler(this, &Client::button11_Click);
+			// 
+			// button10
+			// 
+			this->button10->Location = System::Drawing::Point(520, 61);
+			this->button10->Name = L"button10";
+			this->button10->Size = System::Drawing::Size(91, 25);
+			this->button10->TabIndex = 44;
+			this->button10->Text = L"Up peo";
+			this->button10->UseVisualStyleBackColor = true;
+			this->button10->Click += gcnew System::EventHandler(this, &Client::button10_Click);
 			// 
 			// label15
 			// 
@@ -367,17 +393,17 @@ namespace Interface2_1 {
 			// 
 			this->button7->Location = System::Drawing::Point(520, 90);
 			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(91, 50);
+			this->button7->Size = System::Drawing::Size(91, 25);
 			this->button7->TabIndex = 32;
-			this->button7->Text = L"New Customers";
+			this->button7->Text = L"New Cus";
 			this->button7->UseVisualStyleBackColor = true;
 			this->button7->Click += gcnew System::EventHandler(this, &Client::button7_Click);
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(520, 34);
+			this->button6->Location = System::Drawing::Point(520, 21);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(91, 50);
+			this->button6->Size = System::Drawing::Size(91, 35);
 			this->button6->TabIndex = 31;
 			this->button6->Text = L"New people";
 			this->button6->UseVisualStyleBackColor = true;
@@ -836,5 +862,13 @@ namespace Interface2_1 {
 		this->oSvc4->CreateEmp_Cus("New", this->textBox12->Text, this->textBox3->Text, this->textBox11->Text, this->textBox12->Text);
 	}
 
+		   //button update people
+	private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+
+		   //button update customers
+	private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc4->UpdateEmp_Cus("Update", this->textBox12->Text, this->textBox3->Text, this->textBox11->Text, this->textBox12->Text);
+	}
 };
 }

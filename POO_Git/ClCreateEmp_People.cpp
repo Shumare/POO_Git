@@ -21,6 +21,25 @@ System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_People::CreateEmp_Peo(System::St
 	return this->oCad->getProc(sql, dataTableName, cmd);
 }
 
+System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_People::UpdateEmp_Peo(System::String^ dataTableName, System::String^ idpeople, System::String^ firstname, System::String^ lastname)
+{
+	System::String^ sql;
+	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
+
+	int idpeopleC = System::Convert::ToInt32(idpeople);
+
+	setfirstnamepeo(System::Convert::ToString(firstname));
+	setlastnamepeo(System::Convert::ToString(lastname));
+	setidpeople(idpeopleC);
+
+	sql = this->oMappTB->UpdateEmpPeo();
+	cmd->Parameters->Add("@firstname_peo", System::Data::SqlDbType::NVarChar)->Value = this->firstname_peo;
+	cmd->Parameters->Add("@lastname_peo", System::Data::SqlDbType::NVarChar)->Value = this->lastname_peo;
+	cmd->Parameters->Add("@id_people", System::Data::SqlDbType::NVarChar)->Value = this->id_people;
+
+	return this->oCad->getProc(sql, dataTableName, cmd);
+}
+
 void NS_Comp_Svc::ClCreateEmp_People::setidpeople(int id_people)
 {
 	this->id_people = id_people;

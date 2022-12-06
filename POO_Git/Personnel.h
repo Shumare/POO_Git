@@ -70,6 +70,11 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::Label^ label20;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::TextBox^ textBox16;
+	private: System::Windows::Forms::Button^ button13;
+	private: System::Windows::Forms::Button^ button12;
+	private: System::Windows::Forms::Button^ button14;
+	private: System::Windows::Forms::Label^ label21;
+	private: System::Windows::Forms::TextBox^ textBox17;
 
 
 	private: System::Windows::Forms::DataGridView^ dataGridView3;
@@ -144,6 +149,8 @@ namespace Interface2_1 {
 			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->button13 = (gcnew System::Windows::Forms::Button());
+			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox15 = (gcnew System::Windows::Forms::TextBox());
@@ -153,6 +160,7 @@ namespace Interface2_1 {
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
@@ -181,7 +189,6 @@ namespace Interface2_1 {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
@@ -191,6 +198,7 @@ namespace Interface2_1 {
 			this->dataGridView5 = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridView6 = (gcnew System::Windows::Forms::DataGridView());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->button14 = (gcnew System::Windows::Forms::Button());
 			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->textBox14 = (gcnew System::Windows::Forms::TextBox());
 			this->label18 = (gcnew System::Windows::Forms::Label());
@@ -199,6 +207,8 @@ namespace Interface2_1 {
 			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->textBox17 = (gcnew System::Windows::Forms::TextBox());
+			this->label21 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -269,6 +279,8 @@ namespace Interface2_1 {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->button13);
+			this->groupBox2->Controls->Add(this->button12);
 			this->groupBox2->Controls->Add(this->textBox16);
 			this->groupBox2->Controls->Add(this->label4);
 			this->groupBox2->Controls->Add(this->textBox15);
@@ -278,6 +290,7 @@ namespace Interface2_1 {
 			this->groupBox2->Controls->Add(this->label14);
 			this->groupBox2->Controls->Add(this->textBox11);
 			this->groupBox2->Controls->Add(this->textBox8);
+			this->groupBox2->Controls->Add(this->button2);
 			this->groupBox2->Controls->Add(this->label13);
 			this->groupBox2->Controls->Add(this->button9);
 			this->groupBox2->Controls->Add(this->button8);
@@ -311,6 +324,26 @@ namespace Interface2_1 {
 			this->groupBox2->Size = System::Drawing::Size(621, 401);
 			this->groupBox2->TabIndex = 5;
 			this->groupBox2->TabStop = false;
+			// 
+			// button13
+			// 
+			this->button13->Location = System::Drawing::Point(520, 42);
+			this->button13->Name = L"button13";
+			this->button13->Size = System::Drawing::Size(95, 25);
+			this->button13->TabIndex = 47;
+			this->button13->Text = L"Up Peo";
+			this->button13->UseVisualStyleBackColor = true;
+			this->button13->Click += gcnew System::EventHandler(this, &Personnel::button13_Click);
+			// 
+			// button12
+			// 
+			this->button12->Location = System::Drawing::Point(520, 104);
+			this->button12->Name = L"button12";
+			this->button12->Size = System::Drawing::Size(95, 25);
+			this->button12->TabIndex = 46;
+			this->button12->Text = L"Up Emp";
+			this->button12->UseVisualStyleBackColor = true;
+			this->button12->Click += gcnew System::EventHandler(this, &Personnel::button12_Click);
 			// 
 			// textBox16
 			// 
@@ -390,6 +423,17 @@ namespace Interface2_1 {
 			this->textBox8->TabIndex = 37;
 			this->textBox8->TextChanged += gcnew System::EventHandler(this, &Personnel::textBox8_TextChanged);
 			// 
+			// button2
+			// 
+			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button2->Location = System::Drawing::Point(520, 278);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(95, 33);
+			this->button2->TabIndex = 7;
+			this->button2->Text = L"Update";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Personnel::button2_Click);
+			// 
 			// label13
 			// 
 			this->label13->AutoSize = true;
@@ -403,17 +447,17 @@ namespace Interface2_1 {
 			// 
 			this->button9->Location = System::Drawing::Point(520, 74);
 			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(95, 53);
+			this->button9->Size = System::Drawing::Size(95, 25);
 			this->button9->TabIndex = 35;
-			this->button9->Text = L"New employee";
+			this->button9->Text = L"New Emp";
 			this->button9->UseVisualStyleBackColor = true;
 			this->button9->Click += gcnew System::EventHandler(this, &Personnel::button9_Click);
 			// 
 			// button8
 			// 
-			this->button8->Location = System::Drawing::Point(520, 18);
+			this->button8->Location = System::Drawing::Point(520, 10);
 			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(95, 50);
+			this->button8->Size = System::Drawing::Size(95, 30);
 			this->button8->TabIndex = 34;
 			this->button8->Text = L"New People";
 			this->button8->UseVisualStyleBackColor = true;
@@ -645,17 +689,6 @@ namespace Interface2_1 {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Personnel::button1_Click);
 			// 
-			// button2
-			// 
-			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button2->Location = System::Drawing::Point(161, 520);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(177, 33);
-			this->button2->TabIndex = 7;
-			this->button2->Text = L"Enregistrer";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &Personnel::button2_Click);
-			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
@@ -746,6 +779,9 @@ namespace Interface2_1 {
 			// 
 			// groupBox3
 			// 
+			this->groupBox3->Controls->Add(this->label21);
+			this->groupBox3->Controls->Add(this->textBox17);
+			this->groupBox3->Controls->Add(this->button14);
 			this->groupBox3->Controls->Add(this->label19);
 			this->groupBox3->Controls->Add(this->textBox14);
 			this->groupBox3->Controls->Add(this->label18);
@@ -754,17 +790,27 @@ namespace Interface2_1 {
 			this->groupBox3->Controls->Add(this->textBox13);
 			this->groupBox3->Controls->Add(this->textBox12);
 			this->groupBox3->Controls->Add(this->label16);
-			this->groupBox3->Location = System::Drawing::Point(674, 347);
+			this->groupBox3->Location = System::Drawing::Point(674, 335);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(355, 143);
+			this->groupBox3->Size = System::Drawing::Size(355, 174);
 			this->groupBox3->TabIndex = 16;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Users";
 			// 
+			// button14
+			// 
+			this->button14->Location = System::Drawing::Point(113, 146);
+			this->button14->Name = L"button14";
+			this->button14->Size = System::Drawing::Size(112, 23);
+			this->button14->TabIndex = 8;
+			this->button14->Text = L"Update";
+			this->button14->UseVisualStyleBackColor = true;
+			this->button14->Click += gcnew System::EventHandler(this, &Personnel::button14_Click);
+			// 
 			// label19
 			// 
 			this->label19->AutoSize = true;
-			this->label19->Location = System::Drawing::Point(6, 30);
+			this->label19->Location = System::Drawing::Point(6, 62);
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(66, 17);
 			this->label19->TabIndex = 7;
@@ -772,7 +818,7 @@ namespace Interface2_1 {
 			// 
 			// textBox14
 			// 
-			this->textBox14->Location = System::Drawing::Point(113, 30);
+			this->textBox14->Location = System::Drawing::Point(113, 62);
 			this->textBox14->Name = L"textBox14";
 			this->textBox14->Size = System::Drawing::Size(236, 22);
 			this->textBox14->TabIndex = 6;
@@ -781,7 +827,7 @@ namespace Interface2_1 {
 			// label18
 			// 
 			this->label18->AutoSize = true;
-			this->label18->Location = System::Drawing::Point(6, 86);
+			this->label18->Location = System::Drawing::Point(6, 118);
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(62, 17);
 			this->label18->TabIndex = 5;
@@ -789,9 +835,9 @@ namespace Interface2_1 {
 			// 
 			// button11
 			// 
-			this->button11->Location = System::Drawing::Point(113, 114);
+			this->button11->Location = System::Drawing::Point(231, 146);
 			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(236, 23);
+			this->button11->Size = System::Drawing::Size(118, 23);
 			this->button11->TabIndex = 4;
 			this->button11->Text = L"New user";
 			this->button11->UseVisualStyleBackColor = true;
@@ -807,7 +853,7 @@ namespace Interface2_1 {
 			// 
 			// textBox13
 			// 
-			this->textBox13->Location = System::Drawing::Point(113, 86);
+			this->textBox13->Location = System::Drawing::Point(113, 118);
 			this->textBox13->Name = L"textBox13";
 			this->textBox13->Size = System::Drawing::Size(236, 22);
 			this->textBox13->TabIndex = 2;
@@ -815,7 +861,7 @@ namespace Interface2_1 {
 			// 
 			// textBox12
 			// 
-			this->textBox12->Location = System::Drawing::Point(113, 58);
+			this->textBox12->Location = System::Drawing::Point(113, 90);
 			this->textBox12->Name = L"textBox12";
 			this->textBox12->Size = System::Drawing::Size(236, 22);
 			this->textBox12->TabIndex = 1;
@@ -824,11 +870,28 @@ namespace Interface2_1 {
 			// label16
 			// 
 			this->label16->AutoSize = true;
-			this->label16->Location = System::Drawing::Point(6, 58);
+			this->label16->Location = System::Drawing::Point(6, 90);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(73, 17);
 			this->label16->TabIndex = 0;
 			this->label16->Text = L"Username";
+			// 
+			// textBox17
+			// 
+			this->textBox17->Location = System::Drawing::Point(113, 34);
+			this->textBox17->Name = L"textBox17";
+			this->textBox17->Size = System::Drawing::Size(236, 22);
+			this->textBox17->TabIndex = 9;
+			this->textBox17->TextChanged += gcnew System::EventHandler(this, &Personnel::textBox17_TextChanged);
+			// 
+			// label21
+			// 
+			this->label21->AutoSize = true;
+			this->label21->Location = System::Drawing::Point(6, 34);
+			this->label21->Name = L"label21";
+			this->label21->Size = System::Drawing::Size(51, 17);
+			this->label21->TabIndex = 10;
+			this->label21->Text = L"Id user";
 			// 
 			// Personnel
 			// 
@@ -845,7 +908,6 @@ namespace Interface2_1 {
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->dataGridView1);
-			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
@@ -928,8 +990,36 @@ namespace Interface2_1 {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 
-		   //button Enregistrer
+		   //button Update Address
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dataGridView5->Refresh();
+		String^ foo = this->comboBox2->Text;
+		this->dataGridView5->DataSource = this->oSvc3->SelectIdCity("rsl", foo);
+		this->dataGridView5->DataMember = "rsl";
+		int foo1 = (int)this->dataGridView5->Rows[0]->Cells[8]->Value;
+		String^ result = System::Convert::ToString(foo1);
+		this->dataGridView5->Refresh();
+		String^ foo2 = this->comboBox3->Text;
+		this->dataGridView6->DataSource = this->oSvc3->SelectIdCountry("rsl1", foo2);
+		this->dataGridView6->DataMember = "rsl1";
+		int foo3 = (int)this->dataGridView6->Rows[0]->Cells[0]->Value;
+		String^ result1 = System::Convert::ToString(foo3);
+		this->oSvc3->UpdateEmp_Add("Update", this->textBox11->Text, this->textBox5->Text, this->textBox7->Text, this->textBox4->Text, this->textBox10->Text, this->textBox9->Text, this->textBox6->Text, result1, result);
+	}
+
+	//button update Emp
+	private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc5->UpdateEmp_Emp("Update", this->textBox15->Text, this->textBox3->Text, this->textBox16->Text);
+	}
+
+	//button update Peo
+	private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc4->UpdateEmp_Peo("Update", this->textBox15->Text, this->textBox1->Text, this->textBox2->Text);
+	}
+
+		   //button update Users
+	private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc6->UpdateEmp_Use("Update", this->textBox17->Text, this->textBox14->Text, this->textBox12->Text, this->textBox13->Text);
 	}
 
 		   //Afficher la/les tables
@@ -1022,9 +1112,13 @@ namespace Interface2_1 {
 	}
 	private: System::Void textBox14_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
+	private: System::Void textBox17_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+
 	//button User
 	private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc6->CreateEmp_Use("New", this->textBox14->Text, this->textBox12->Text, this->textBox13->Text);
 	}
+
 };
 }

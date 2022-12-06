@@ -15,6 +15,7 @@ namespace NS_Comp_Svc {
 	public:
 		ClCreateEmp_Users(void);
 		System::Data::DataSet^ CreateEmp_Use(System::String^, System::String^, System::String^, System::String^);
+		System::Data::DataSet^ UpdateEmp_Use(System::String^, System::String^, System::String^, System::String^, System::String^);
 		void setIdUser(int);
 		int getIdUser(void);
 		void setUserNameUse(System::String^);
