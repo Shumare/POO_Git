@@ -160,5 +160,5 @@ namespace Interface2_1 {
 		Stats^ Stat1 = gcnew Stats();
 		Stat1->Show();
 	}
-	};
+};
 }

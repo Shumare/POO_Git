@@ -118,6 +118,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Acity.cpp" />
+    <ClCompile Include="Acountry.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="CLcommande.cpp" />
     <ClCompile Include="CLconnection.cpp" />
@@ -145,6 +147,12 @@
     <ClCompile Include="Sup.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Acity.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Acountry.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CLcommande.h" />
     <ClInclude Include="CLconnection.h" />
     <ClInclude Include="ClCreateEmp_Address.h" />
@@ -187,6 +195,12 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Acity.resx">
+      <DependentUpon>Acity.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Acountry.resx">
+      <DependentUpon>Acountry.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.h</DependentUpon>
     </EmbeddedResource>
