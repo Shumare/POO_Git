@@ -14,7 +14,7 @@ System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_City::CreateEmp_Cit(System::Stri
 	setNameCit(System::Convert::ToString(name));
 
 	sql = this->oMappTB->CreateEmpCit();
-	cmd->Parameters->Add("@countryname_cou", System::Data::SqlDbType::NVarChar)->Value = this->cityname_cit;
+	cmd->Parameters->Add("@cityname_cit", System::Data::SqlDbType::NVarChar)->Value = this->cityname_cit;
 
 	return this->oCad->getProc(sql, dataTableName, cmd);
 }
@@ -31,14 +31,14 @@ System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_City::ReadEmp_Cit(System::String
 
 
 
-void NS_Comp_Svc::ClCreateEmp_City::setidcity(int id_country)
+void NS_Comp_Svc::ClCreateEmp_City::setidcity(int id_city)
 {
-	this->id_city = id_country;
+	this->id_city = id_city;
 }
 int NS_Comp_Svc::ClCreateEmp_City::getidcity(void) { return this->id_city; }
 
-void NS_Comp_Svc::ClCreateEmp_City::setNameCit(System::String^ countryname_cou)
+void NS_Comp_Svc::ClCreateEmp_City::setNameCit(System::String^ cityname_cit)
 {
-	this->cityname_cit = countryname_cou;
+	this->cityname_cit = cityname_cit;
 }
 System::String^ NS_Comp_Svc::ClCreateEmp_City::getNameCit(void) { return this->cityname_cit; }

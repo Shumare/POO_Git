@@ -5,7 +5,7 @@
 
 NS_Comp_Data::Connect::Connect(void)
 {
-    this->sCnx = "Data Source =PC-PORTABLE-TIM\\MSSQL_TIMEO;Initial Catalog = DB_POO;Persist Security Info = True;User ID = Manager;Password = password";
+    this->sCnx = "Data Source=MSI\\MSSQL_BAPTISTE;Initial Catalog=DB_POO;Persist Security Info=True;User ID=Manager;Password=password";
 
     this->sSql = "Rien";
 
