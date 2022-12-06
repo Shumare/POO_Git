@@ -31,7 +31,6 @@
     <ClCompile Include="StockProc.cpp" />
     <ClCompile Include="Sup.cpp" />
     <ClCompile Include="CLstats.cpp" />
-    <ClCompile Include="Bill.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Acity.h" />

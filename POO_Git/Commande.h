@@ -1,6 +1,7 @@
 #pragma once
 #include "Contain.h"
 #include "CLcommande.h"
+#include "Bill.h"
 namespace Interface2_1 {
 
 	using namespace System;
@@ -591,6 +592,8 @@ namespace Interface2_1 {
 
 		   //button BILL
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		Bill^ B1 = gcnew Bill;
+		B1->Show();
 
 	}
 

@@ -121,7 +121,6 @@
     <ClCompile Include="Acity.cpp" />
     <ClCompile Include="Acountry.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
-    <ClCompile Include="Bill.cpp" />
     <ClCompile Include="CLcommande.cpp" />
     <ClCompile Include="CLconnection.cpp" />
     <ClCompile Include="CLcontain.cpp" />
