@@ -14,7 +14,7 @@ namespace NS_Comp_Svc {
 		NS_Comp_Mappage::StockProc^ oMappTB;
 	public:
 		ClCreateEmp_Users(void);
-		System::Data::DataSet^ CreateEmp_Use(System::String^);
+		System::Data::DataSet^ CreateEmp_Use(System::String^, System::String^, System::String^, System::String^);
 		void setIdUser(int);
 		int getIdUser(void);
 		void setUserNameUse(System::String^);

@@ -14,7 +14,7 @@ System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_People::CreateEmp_Peo(System::St
 	setfirstnamepeo(System::Convert::ToString(firstname));
 	setlastnamepeo(System::Convert::ToString(lastname));
 
-	sql = this->oMappTB->CreateEmpAdd();
+	sql = this->oMappTB->CreateEmpPeo();
 	cmd->Parameters->Add("@firstname_peo", System::Data::SqlDbType::NVarChar)->Value = this->firstname_peo;
 	cmd->Parameters->Add("@lastname_peo", System::Data::SqlDbType::NVarChar)->Value = this->lastname_peo;
 

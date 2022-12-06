@@ -51,6 +51,8 @@ namespace NS_Comp_Mappage
 
 		System::String^ SelectIdCountry(void);
 
+		System::String^ CreateEmpCus(void);
+
 		
 	};
 

@@ -126,6 +126,7 @@
     <ClCompile Include="ClCreateEmp_Address.cpp" />
     <ClCompile Include="ClCreateEmp_City.cpp" />
     <ClCompile Include="ClCreateEmp_Country.cpp" />
+    <ClCompile Include="ClCreateEmp_Customers.cpp" />
     <ClCompile Include="ClCreateEmp_Employee.cpp" />
     <ClCompile Include="ClCreateEmp_Own.cpp" />
     <ClCompile Include="ClCreateEmp_People.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="ClCreateEmp_Address.h" />
     <ClInclude Include="ClCreateEmp_City.h" />
     <ClInclude Include="ClCreateEmp_Country.h" />
+    <ClInclude Include="ClCreateEmp_Customers.h" />
     <ClInclude Include="ClCreateEmp_Employee.h" />
     <ClInclude Include="ClCreateEmp_Own.h" />
     <ClInclude Include="ClCreateEmp_People.h" />

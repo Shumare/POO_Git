@@ -1,4 +1,5 @@
 #pragma once
+#include "ClCreateEmp_City.h"
 
 namespace Interface2_1 {
 
@@ -34,6 +35,7 @@ namespace Interface2_1 {
 				delete components;
 			}
 		}
+	private: NS_Comp_Svc::ClCreateEmp_City^ oSvc = gcnew NS_Comp_Svc::ClCreateEmp_City;
 	private: System::Windows::Forms::Label^ label1;
 	protected:
 	private: System::Windows::Forms::TextBox^ textBox1;
@@ -104,6 +106,7 @@ namespace Interface2_1 {
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->CreateEmp_Cit("New", this->textBox1->Text);
 	}
 	};
 }

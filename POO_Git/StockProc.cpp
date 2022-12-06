@@ -117,3 +117,8 @@ System::String^ NS_Comp_Mappage::StockProc::SelectIdCountry(void) {
 
 	return "dbo.SelectIdCountry";
 }
+
+System::String^ NS_Comp_Mappage::StockProc::CreateEmpCus(void) {
+
+	return "dbo.CreateEmp_Customers";
+}

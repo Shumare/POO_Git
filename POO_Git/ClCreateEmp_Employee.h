@@ -13,10 +13,10 @@ namespace NS_Comp_Svc {
 		NS_Comp_Mappage::StockProc^ oMappTB;
 	public:
 		ClCreateEmp_Employee(void);
-		System::Data::DataSet^ CreateEmp_Emp(System::String^, System::String^, System::String^);
+		System::Data::DataSet^ CreateEmp_Emp(System::String^, System::String^, System::String^, System::String^);
 
 		void setIdPeople(int);
-		int getœdPeople(void);
+		int getIdPeople(void);
 		void setHireDateEmp(System::String^);
 		System::String^ getHireDateEmp(void);
 		void setIdManager(int);
