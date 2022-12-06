@@ -118,6 +118,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Acity.cpp" />
+    <ClCompile Include="Acountry.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="CLcommande.cpp" />
     <ClCompile Include="CLconnection.cpp" />
@@ -125,6 +127,7 @@
     <ClCompile Include="ClCreateEmp_Address.cpp" />
     <ClCompile Include="ClCreateEmp_City.cpp" />
     <ClCompile Include="ClCreateEmp_Country.cpp" />
+    <ClCompile Include="ClCreateEmp_Customers.cpp" />
     <ClCompile Include="ClCreateEmp_Employee.cpp" />
     <ClCompile Include="ClCreateEmp_Own.cpp" />
     <ClCompile Include="ClCreateEmp_People.cpp" />
@@ -146,12 +149,19 @@
     <ClCompile Include="Sup.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Acity.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Acountry.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CLcommande.h" />
     <ClInclude Include="CLconnection.h" />
     <ClInclude Include="CLcontain.h" />
     <ClInclude Include="ClCreateEmp_Address.h" />
     <ClInclude Include="ClCreateEmp_City.h" />
     <ClInclude Include="ClCreateEmp_Country.h" />
+    <ClInclude Include="ClCreateEmp_Customers.h" />
     <ClInclude Include="ClCreateEmp_Employee.h" />
     <ClInclude Include="ClCreateEmp_Own.h" />
     <ClInclude Include="ClCreateEmp_People.h" />
@@ -189,6 +199,12 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Acity.resx">
+      <DependentUpon>Acity.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Acountry.resx">
+      <DependentUpon>Acountry.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.h</DependentUpon>
     </EmbeddedResource>

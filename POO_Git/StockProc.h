@@ -22,11 +22,13 @@ namespace NS_Comp_Mappage
 		System::String^ SelectEmployees(void);
 
 		System::String^ CreateEmpAdd(void);
+		System::String^ ReadEmpAdd(void);
 
 		System::String^ CreateEmpCit(void);
 		System::String^ ReadEmpCit(void);
 
 		System::String^ CreateEmpCou(void);
+		System::String^ ReadEmpCou(void);
 
 		System::String^ CreateEmpEmp(void);
 
@@ -53,6 +55,14 @@ namespace NS_Comp_Mappage
 		System::String^ PriceCommission(void);
 		System::String^ GetDate(void);
 		System::String^ NewCommission(void);
+
+		System::String^ SelectIdCity(void);
+
+		System::String^ SelectIdCountry(void);
+
+		System::String^ CreateEmpCus(void);
+
+		
 	};
 
 }

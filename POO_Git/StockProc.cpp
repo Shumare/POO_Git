@@ -30,12 +30,15 @@ System::String^ NS_Comp_Mappage::StockProc::CreateEmpAdd(void)
 {
 	return "dbo.CreateEmp_Address";
 }
+System::String^ NS_Comp_Mappage::StockProc::ReadEmpAdd(void)
+{
+	return "dbo.ReadEmp_Address";
+}
 
 System::String^ NS_Comp_Mappage::StockProc::CreateEmpCit(void)
 {
 	return "dbo.CreateEmp_City";
 }
-
 System::String^ NS_Comp_Mappage::StockProc::ReadEmpCit(void)
 {
 	return "dbo.ReadEmp_City";
@@ -44,6 +47,10 @@ System::String^ NS_Comp_Mappage::StockProc::ReadEmpCit(void)
 System::String^ NS_Comp_Mappage::StockProc::CreateEmpCou(void)
 {
 	return "dbo.CreateEmp_Country";
+}
+System::String^ NS_Comp_Mappage::StockProc::ReadEmpCou(void)
+{
+	return "dbo.ReadEmp_Country";
 }
 
 System::String^ NS_Comp_Mappage::StockProc::CreateEmpEmp(void)
@@ -152,4 +159,18 @@ System::String^ NS_Comp_Mappage::StockProc::NewCommission(void) {
 
 	return "dbo.NewCommission";
 
+}
+System::String^ NS_Comp_Mappage::StockProc::SelectIdCity(void) {
+
+	return "dbo.SelectIdCity";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::SelectIdCountry(void) {
+
+	return "dbo.SelectIdCountry";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::CreateEmpCus(void) {
+
+	return "dbo.CreateEmp_Customers";
 }
