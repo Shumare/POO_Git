@@ -1,182 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Fichiers sources">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Fichiers de ressources">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="Acity.cpp" />
+    <ClCompile Include="Acountry.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CLcommande.cpp" />
+    <ClCompile Include="CLconnection.cpp" />
+    <ClCompile Include="CLcontain.cpp" />
+    <ClCompile Include="ClCreateEmp_Address.cpp" />
+    <ClCompile Include="ClCreateEmp_City.cpp" />
+    <ClCompile Include="ClCreateEmp_Country.cpp" />
+    <ClCompile Include="ClCreateEmp_Customers.cpp" />
+    <ClCompile Include="ClCreateEmp_Employee.cpp" />
+    <ClCompile Include="ClCreateEmp_Own.cpp" />
+    <ClCompile Include="ClCreateEmp_People.cpp" />
+    <ClCompile Include="ClCreateEmp_Users.cpp" />
+    <ClCompile Include="CLemployees.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="CLstock.cpp" />
+    <ClCompile Include="Commande.cpp" />
+    <ClCompile Include="Connect.cpp" />
+    <ClCompile Include="Connection.cpp" />
+    <ClCompile Include="Contain.cpp" />
+    <ClCompile Include="CppCLR_WinformsProjekt.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Pers.cpp" />
+    <ClCompile Include="Personnel.cpp" />
+    <ClCompile Include="Stats.cpp" />
+    <ClCompile Include="Stock.cpp" />
+    <ClCompile Include="StockProc.cpp" />
+    <ClCompile Include="Sup.cpp" />
+    <ClCompile Include="CLstats.cpp" />
+    <ClCompile Include="Bill.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Connection.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClCompile>
-    <ClCompile Include="Sup.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClCompile>
-    <ClCompile Include="Pers.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClCompile>
-    <ClCompile Include="Commande.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClCompile>
-    <ClCompile Include="Client.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClCompile>
-    <ClCompile Include="Stock.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClCompile>
-    <ClCompile Include="Personnel.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClCompile>
-    <ClCompile Include="Stats.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CppCLR_WinformsProjekt.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="AssemblyInfo.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Contain.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClCompile>
-    <ClCompile Include="Connect.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="StockProc.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CLcommande.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CLstock.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CLconnection.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="ClCreateEmp_Address.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="ClCreateEmp_City.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="ClCreateEmp_Country.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="ClCreateEmp_Employee.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="ClCreateEmp_Own.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="ClCreateEmp_People.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="ClCreateEmp_Users.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CLemployees.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CLcontain.cpp">
-    <ClCompile Include="Acity.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClCompile>
-    <ClCompile Include="Acountry.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClCompile>
-    <ClCompile Include="ClCreateEmp_Customers.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Connection.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Sup.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Pers.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Commande.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Client.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Stock.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Personnel.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Stats.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Contain.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Connect.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="StockProc.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CLcommande.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CLstock.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CLconnection.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="ClCreateEmp_Address.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="ClCreateEmp_City.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="ClCreateEmp_Country.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="ClCreateEmp_Employee.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="ClCreateEmp_Own.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="ClCreateEmp_People.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="ClCreateEmp_Users.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CLemployees.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CLcontain.h">
-    <ClInclude Include="Acity.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Acountry.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="ClCreateEmp_Customers.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
+    <ClInclude Include="Acity.h" />
+    <ClInclude Include="Acountry.h" />
+    <ClInclude Include="CLcommande.h" />
+    <ClInclude Include="CLconnection.h" />
+    <ClInclude Include="CLcontain.h" />
+    <ClInclude Include="ClCreateEmp_Address.h" />
+    <ClInclude Include="ClCreateEmp_City.h" />
+    <ClInclude Include="ClCreateEmp_Country.h" />
+    <ClInclude Include="ClCreateEmp_Customers.h" />
+    <ClInclude Include="ClCreateEmp_Employee.h" />
+    <ClInclude Include="ClCreateEmp_Own.h" />
+    <ClInclude Include="ClCreateEmp_People.h" />
+    <ClInclude Include="ClCreateEmp_Users.h" />
+    <ClInclude Include="CLemployees.h" />
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="CLstock.h" />
+    <ClInclude Include="Commande.h" />
+    <ClInclude Include="Connect.h" />
+    <ClInclude Include="Connection.h" />
+    <ClInclude Include="Contain.h" />
+    <ClInclude Include="Pers.h" />
+    <ClInclude Include="Personnel.h" />
+    <ClInclude Include="Stats.h" />
+    <ClInclude Include="Stock.h" />
+    <ClInclude Include="StockProc.h" />
+    <ClInclude Include="Sup.h" />
+    <ClInclude Include="CLstats.h" />
+    <ClInclude Include="Bill.h" />
   </ItemGroup>
 </Project>

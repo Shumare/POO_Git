@@ -62,6 +62,17 @@ namespace NS_Comp_Mappage
 
 		System::String^ CreateEmpCus(void);
 
+		System::String^ PanierMoyenApresRemise(void);
+		System::String^ ChiffreAffaireMois(void);
+		System::String^ ArticlesSousStock(void);
+		System::String^ MontantTotalClient(void);
+		System::String^ DixArticlesMoinsVendus(void);
+		System::String^ DixArticlesPlusVendus(void);
+		System::String^ ValeurCommercialeStock(void);
+		System::String^ ValeurAchatStock(void);
+		System::String^ SimulValCommerciale(void);
+
+
 		
 	};
 

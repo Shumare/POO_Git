@@ -121,6 +121,7 @@
     <ClCompile Include="Acity.cpp" />
     <ClCompile Include="Acountry.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="Bill.cpp" />
     <ClCompile Include="CLcommande.cpp" />
     <ClCompile Include="CLconnection.cpp" />
     <ClCompile Include="CLcontain.cpp" />
@@ -134,6 +135,7 @@
     <ClCompile Include="ClCreateEmp_Users.cpp" />
     <ClCompile Include="CLemployees.cpp" />
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="CLstats.cpp" />
     <ClCompile Include="CLstock.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Connect.cpp" />
@@ -155,6 +157,9 @@
     <ClInclude Include="Acountry.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Bill.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CLcommande.h" />
     <ClInclude Include="CLconnection.h" />
     <ClInclude Include="CLcontain.h" />
@@ -170,6 +175,7 @@
     <ClInclude Include="Client.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CLstats.h" />
     <ClInclude Include="CLstock.h" />
     <ClInclude Include="Commande.h">
       <FileType>CppForm</FileType>
@@ -205,6 +211,9 @@
     <EmbeddedResource Include="Acountry.resx">
       <DependentUpon>Acountry.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bill.resx">
+      <DependentUpon>Bill.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.h</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Personnel.resx">
       <DependentUpon>Personnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stats.resx">
+      <DependentUpon>Stats.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stock.resx">
       <DependentUpon>Stock.h</DependentUpon>

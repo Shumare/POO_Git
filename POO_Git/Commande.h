@@ -591,6 +591,7 @@ namespace Interface2_1 {
 
 		   //button BILL
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+
 	}
 
 		   //Afficher la/les tables
