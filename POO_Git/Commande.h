@@ -74,6 +74,8 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::TextBox^ textBox9;
 
 	private:
 		/// <summary>
@@ -118,6 +120,8 @@ namespace Interface2_1 {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -173,6 +177,8 @@ namespace Interface2_1 {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->label10);
+			this->groupBox2->Controls->Add(this->textBox9);
 			this->groupBox2->Controls->Add(this->textBox8);
 			this->groupBox2->Controls->Add(this->label8);
 			this->groupBox2->Controls->Add(this->label7);
@@ -426,6 +432,23 @@ namespace Interface2_1 {
 			this->dataGridView2->TabIndex = 14;
 			this->dataGridView2->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Commande::dataGridView2_CellContentClick);
 			// 
+			// textBox9
+			// 
+			this->textBox9->Location = System::Drawing::Point(187, 300);
+			this->textBox9->Name = L"textBox9";
+			this->textBox9->Size = System::Drawing::Size(327, 22);
+			this->textBox9->TabIndex = 23;
+			this->textBox9->TextChanged += gcnew System::EventHandler(this, &Commande::textBox9_TextChanged);
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(6, 300);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(80, 17);
+			this->label10->TabIndex = 24;
+			this->label10->Text = L"Today date";
+			// 
 			// Commande
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -508,8 +531,8 @@ namespace Interface2_1 {
 		   //button new
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dataGridView2->Refresh();
-		this->dataGridView2->DataSource = this->oSvc->SelectComInfo("rsl",this->textBox7->Text);
-		this->dataGridView2->DataMember = "rsl";
+		this->dataGridView2->DataSource = this->oSvc->SelectComInfo("r",this->textBox7->Text);
+		this->dataGridView2->DataMember = "r";
 
 		//Reference
 		String^ foo;
@@ -523,15 +546,47 @@ namespace Interface2_1 {
 		allinfo = allinfo + foo->Trim()->Substring(0, 3);
 		
 		this->dataGridView2->Refresh();
-		this->dataGridView2->DataSource = this->oSvc->SelectComInc("rsl", this->textBox7->Text);
-		this->dataGridView2->DataMember = "rsl";
+		this->dataGridView2->DataSource = this->oSvc->SelectComInc("rs", this->textBox7->Text);
+		this->dataGridView2->DataMember = "rs";
 		allinfo = allinfo + System::Convert::ToString(this->dataGridView2->RowCount);
 
-		label1->Text = allinfo;
-		
 
-		String^ test = "tout";
-		String^ recup =  test->Substring(0, 2);
+		//Nombre d'items
+		this->dataGridView2->Refresh();
+		this->dataGridView2->DataSource = this->oSvc->ComptItems("tat", this->textBox7->Text);
+		this->dataGridView2->DataMember = "tat";
+
+		String^ numberitems = System::Convert::ToString((int)this->dataGridView2->Rows[0]->Cells[0]->Value);
+
+
+		//Prix de la commission
+		this->dataGridView2->Refresh();
+		this->dataGridView2->DataSource = this->oSvc->PriceCommission("rslt", this->textBox7->Text);
+		this->dataGridView2->DataMember = "rslt";
+
+		String^ priceitems = System::Convert::ToString((int)this->dataGridView2->Rows[0]->Cells[0]->Value);
+		label1->Text = priceitems;
+		
+		//Discounts
+		this->dataGridView2->Refresh();
+		this->dataGridView2->DataSource = this->oSvc->GetDate("rslt", this->textBox7->Text);
+		this->dataGridView2->DataMember = "rslt";
+		
+		System::String^ date = this->textBox9->Text;
+		System::String^ date2 = System::Convert::ToString((DateTime)this->dataGridView2->Rows[0]->Cells[1]->Value);
+		System::String^ date3 = System::Convert::ToString((DateTime)this->dataGridView2->Rows[0]->Cells[2]->Value);
+		date2 = date2->Substring(0, 10);
+		date3 = date3->Substring(0, 10);
+		String^ discount = "0";
+		if (date3 == date) {
+			String^ discount = "5";
+		}
+		if (date2 == date) {
+			String^ discount = "10";
+		}
+		System::Convert::ToDateTime(date2);
+		this->oSvc->NewCommission("NewCommission",this->textBox6->Text,allinfo,this->textBox2->Text,this->textBox3->Text,numberitems,discount,priceitems);
+
 	}
 
 		   //button BILL
@@ -559,6 +614,8 @@ private: System::Void dataGridView2_CellContentClick(System::Object^ sender, Sys
 private: System::Void textBox7_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox8_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox9_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

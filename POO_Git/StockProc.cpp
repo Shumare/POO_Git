@@ -129,3 +129,27 @@ System::String^ NS_Comp_Mappage::StockProc::SelectComInc(void) {
 	return "dbo.SelectComInc";
 
 }
+
+System::String^ NS_Comp_Mappage::StockProc::ComptItems(void) {
+
+	return "dbo.ComptItems";
+
+}
+
+System::String^ NS_Comp_Mappage::StockProc::PriceCommission(void) {
+
+	return "dbo.PriceCommission";
+
+}
+
+System::String^ NS_Comp_Mappage::StockProc::GetDate(void) {
+
+	return "dbo.GetDate";
+
+}
+
+System::String^ NS_Comp_Mappage::StockProc::NewCommission(void) {
+
+	return "dbo.NewCommission";
+
+}

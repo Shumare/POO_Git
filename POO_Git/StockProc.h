@@ -49,7 +49,10 @@ namespace NS_Comp_Mappage
 		System::String^ DeleteCommission(void);
 		System::String^ SelectComInfo(void);
 		System::String^ SelectComInc(void);
-		
+		System::String^ ComptItems(void);
+		System::String^ PriceCommission(void);
+		System::String^ GetDate(void);
+		System::String^ NewCommission(void);
 	};
 
 }
