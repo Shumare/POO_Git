@@ -24,6 +24,8 @@ namespace NS_Comp_Mappage
 		System::String^ CreateEmpAdd(void);
 		System::String^ ReadEmpAdd(void);
 
+		System::String^ UpdateEmpAdd(void);
+
 		System::String^ CreateEmpCit(void);
 		System::String^ ReadEmpCit(void);
 
@@ -32,11 +34,17 @@ namespace NS_Comp_Mappage
 
 		System::String^ CreateEmpEmp(void);
 
+		System::String^ UpdateEmpEmp(void);
+
 		System::String^ CreateEmpOwn(void);
 
 		System::String^ CreateEmpPeo(void);
 
+		System::String^ UpdateEmpPeo(void);
+
 		System::String^ CreateEmpUse(void);
+
+		System::String^ UpdateEmpUse(void);
 
 	
 		System::String^ SelectAllCommision(void);
@@ -61,6 +69,8 @@ namespace NS_Comp_Mappage
 		System::String^ SelectIdCountry(void);
 
 		System::String^ CreateEmpCus(void);
+
+		System::String^ UpdateEmpCus(void);
 
 		
 	};

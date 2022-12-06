@@ -14,6 +14,7 @@ namespace NS_Comp_Svc {
 	public:
 		ClCreateEmp_People(void);
 		System::Data::DataSet^ CreateEmp_Peo(System::String^, System::String^, System::String^);
+		System::Data::DataSet^ UpdateEmp_Peo(System::String^, System::String^, System::String^, System::String^);
 
 		void setidpeople(int);
 		int getidpeople(void);

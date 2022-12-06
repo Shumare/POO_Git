@@ -36,6 +36,39 @@ System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Address::CreateEmp_Add(System::S
 	return this->oCad->getProc(sql, dataTableName, cmd);
 }
 
+System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Address::UpdateEmp_Add(System::String^ dataTableName, System::String^ id_address, System::String^ number, System::String^ TypeWay, System::String^ Way, System::String^ Numres, System::String^ Type, System::String^ Postcode, System::String^ id_country, System::String^ id_city)
+{
+	System::String^ sql;
+	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
+
+	int idaddressC = System::Convert::ToInt32(id_address);
+	int idcountryC = System::Convert::ToInt32(id_country);
+	int idcityC = System::Convert::ToInt32(id_city);
+
+	setNumberAdd(System::Convert::ToString(number));
+	setTypeWay(System::Convert::ToString(TypeWay));
+	setWayAdd(System::Convert::ToString(Way));
+	setNumresAdd(System::Convert::ToString(Numres));
+	setTypeAdd(System::Convert::ToString(Type));
+	setPostcodeAdd(System::Convert::ToString(Postcode));
+	setidaddress(idaddressC);
+	setidcountry(idcountryC);
+	setidcity(idcityC);
+
+	sql = this->oMappTB->UpdateEmpAdd();
+	cmd->Parameters->Add("@id_address", System::Data::SqlDbType::NVarChar)->Value = this->id_address;
+	cmd->Parameters->Add("@number_add", System::Data::SqlDbType::NVarChar)->Value = this->number_add;
+	cmd->Parameters->Add("@typeway", System::Data::SqlDbType::NVarChar)->Value = this->typeway;
+	cmd->Parameters->Add("@way_add", System::Data::SqlDbType::NVarChar)->Value = this->way_add;
+	cmd->Parameters->Add("@numres_add", System::Data::SqlDbType::NVarChar)->Value = this->numres_add;
+	cmd->Parameters->Add("@type_add", System::Data::SqlDbType::NVarChar)->Value = this->type_add;
+	cmd->Parameters->Add("@postcode_add", System::Data::SqlDbType::NVarChar)->Value = this->postcode_add;
+	cmd->Parameters->Add("@id_country", System::Data::SqlDbType::NVarChar)->Value = this->id_country;
+	cmd->Parameters->Add("@id_city", System::Data::SqlDbType::NVarChar)->Value = this->id_city;
+
+	return this->oCad->getProc(sql, dataTableName, cmd);
+}
+
 System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Address::ReadEmp_Add(System::String^ dataTableName)
 {
 	System::String^ sql;
@@ -132,3 +165,9 @@ void NS_Comp_Svc::ClCreateEmp_Address::setidcity(int id_city)
 	this->id_city = id_city;
 }
 int NS_Comp_Svc::ClCreateEmp_Address::getidcity(void) { return this->id_city; }
+
+void NS_Comp_Svc::ClCreateEmp_Address::setidaddress(int id_address)
+{
+	this->id_address = id_address;
+}
+int NS_Comp_Svc::ClCreateEmp_Address::getidaddress(void) { return this->id_address; }
