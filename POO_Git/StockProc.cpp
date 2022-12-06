@@ -108,6 +108,58 @@ System::String^ NS_Comp_Mappage::StockProc::SelectIdentifiantManager(void) {
 	return "dbo.SelectIdentifiantManager";
 }
 
+System::String^ NS_Comp_Mappage::StockProc::NewContain(void) {
+
+	return "dbo.NewContain";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::NewCommissionEmpty(void) {
+
+	return "dbo.NewCommissionEmpty";
+
+}
+
+System::String^ NS_Comp_Mappage::StockProc::DeleteCommission(void) {
+
+	return "dbo.DeleteCommission";
+
+}
+
+System::String^ NS_Comp_Mappage::StockProc::SelectComInfo(void) {
+
+	return "dbo.SelectComInfo";
+
+}
+
+System::String^ NS_Comp_Mappage::StockProc::SelectComInc(void) {
+
+	return "dbo.SelectComInc";
+
+}
+
+System::String^ NS_Comp_Mappage::StockProc::ComptItems(void) {
+
+	return "dbo.ComptItems";
+
+}
+
+System::String^ NS_Comp_Mappage::StockProc::PriceCommission(void) {
+
+	return "dbo.PriceCommission";
+
+}
+
+System::String^ NS_Comp_Mappage::StockProc::GetDate(void) {
+
+	return "dbo.GetDate";
+
+}
+
+System::String^ NS_Comp_Mappage::StockProc::NewCommission(void) {
+
+	return "dbo.NewCommission";
+
+}
 System::String^ NS_Comp_Mappage::StockProc::SelectIdCity(void) {
 
 	return "dbo.SelectIdCity";

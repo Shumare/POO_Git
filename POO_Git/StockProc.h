@@ -46,6 +46,15 @@ namespace NS_Comp_Mappage
 		System::String^ UpdateArticles(void);
 		System::String^ SelectIdentifiant(void);
 		System::String^ SelectIdentifiantManager(void);
+		System::String^ NewContain(void);
+		System::String^ NewCommissionEmpty(void);
+		System::String^ DeleteCommission(void);
+		System::String^ SelectComInfo(void);
+		System::String^ SelectComInc(void);
+		System::String^ ComptItems(void);
+		System::String^ PriceCommission(void);
+		System::String^ GetDate(void);
+		System::String^ NewCommission(void);
 
 		System::String^ SelectIdCity(void);
 

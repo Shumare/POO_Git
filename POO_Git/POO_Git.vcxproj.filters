@@ -90,6 +90,7 @@
     <ClCompile Include="CLemployees.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="CLcontain.cpp">
     <ClCompile Include="Acity.cpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClCompile>
@@ -167,6 +168,7 @@
     <ClInclude Include="CLemployees.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="CLcontain.h">
     <ClInclude Include="Acity.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
