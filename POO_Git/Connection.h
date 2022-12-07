@@ -101,11 +101,11 @@ namespace Interface2_1 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(495, 83);
+			this->label1->Location = System::Drawing::Point(477, 83);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(73, 17);
+			this->label1->Size = System::Drawing::Size(147, 17);
 			this->label1->TabIndex = 2;
-			this->label1->Text = L"Username";
+			this->label1->Text = L"Username and/or Mail";
 			this->label1->Click += gcnew System::EventHandler(this, &Connection::label1_Click);
 			// 
 			// label2
@@ -220,7 +220,8 @@ private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^
 		if (this->textBox1->Text == Ident) {
 			foo = (System::String^)this->dataGridView1->Rows[i]->Cells[1]->Value;
 			String^ Password = foo->Trim();
-			if (this->textBox2->Text == Password) {
+			String^ passhash = System::Convert::ToString(this->textBox2->Text->GetHashCode());
+			if (passhash == Password) {
 				int idpeople;
 				idpeople = (int)this->dataGridView1->Rows[i]->Cells[2]->Value;
 				//
@@ -238,12 +239,6 @@ private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^
 					S1->Show();
 					//this->Hide();
 				}
-				
-				
-				
-				
-					
-				
 				
 
 				

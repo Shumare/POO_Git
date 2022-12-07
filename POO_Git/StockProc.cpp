@@ -194,6 +194,71 @@ System::String^ NS_Comp_Mappage::StockProc::CreateEmpCus(void) {
 
 	return "dbo.CreateEmp_Customers";
 }
+
+System::String^ NS_Comp_Mappage::StockProc::PanierMoyenApresRemise(void) {
+
+	return "dbo.PanierMoyenApresRemise";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::ChiffreAffaireMois(void) {
+
+	return "dbo.ChiffreAffaireMois";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::ArticlesSousStock(void) {
+
+	return "dbo.ArticlesSousStock";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::MontantTotalClient(void) {
+
+	return "dbo.MontantTotalClient";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::DixArticlesMoinsVendus(void) {
+
+	return "dbo.DixArticlesMoinsVendus";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::DixArticlesPlusVendus(void) {
+
+	return "dbo.DixArticlesPlusVendus";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::ValeurCommercialeStock(void) {
+
+	return "dbo.ValeurCommercialeStock";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::ValeurAchatStock(void) {
+
+	return "dbo.ValeurAchatStock";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::SimulValCommerciale(void) {
+
+	return "dbo.SimulValCommerciale";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::UpdatePayment(void) {
+
+	return "dbo.UpdatePayment";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::NewPayment(void) {
+
+	return "dbo.NewPayment";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::SelectAllPayment(void) {
+
+	return "dbo.SelectAllPayment";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::DeletePayment(void) {
+
+	return "dbo.DeletePayment";
+}
 System::String^ NS_Comp_Mappage::StockProc::UpdateEmpCus(void) {
 
 	return "dbo.UpdateCustomers";

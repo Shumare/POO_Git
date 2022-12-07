@@ -19,7 +19,7 @@ System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Users::CreateEmp_Use(System::Str
 
 	sql = this->oMappTB->CreateEmpUse();
 	cmd->Parameters->Add("@username_use", System::Data::SqlDbType::NVarChar)->Value = this->username_use;
-	cmd->Parameters->Add("@password_use", System::Data::SqlDbType::NVarChar)->Value = this->password_use;
+	cmd->Parameters->Add("@password_use", System::Data::SqlDbType::NVarChar)->Value = this->password_use->GetHashCode();
 	cmd->Parameters->Add("@id_people", System::Data::SqlDbType::NVarChar)->Value = this->id_people;
 
 	return this->oCad->getProc(sql, dataTableName, cmd);
