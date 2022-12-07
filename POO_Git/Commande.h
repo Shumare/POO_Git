@@ -77,6 +77,18 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::TextBox^ textBox9;
+	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Button^ button8;
+	private: System::Windows::Forms::Button^ button9;
+	private: System::Windows::Forms::Button^ button10;
+	private: System::Windows::Forms::TextBox^ textBox10;
+	private: System::Windows::Forms::TextBox^ textBox11;
+	private: System::Windows::Forms::TextBox^ textBox12;
+	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::TextBox^ textBox13;
 
 	private:
 		/// <summary>
@@ -96,6 +108,8 @@ namespace Interface2_1 {
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
@@ -121,8 +135,18 @@ namespace Interface2_1 {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->button9 = (gcnew System::Windows::Forms::Button());
+			this->button10 = (gcnew System::Windows::Forms::Button());
+			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -203,6 +227,23 @@ namespace Interface2_1 {
 			this->groupBox2->Size = System::Drawing::Size(520, 325);
 			this->groupBox2->TabIndex = 7;
 			this->groupBox2->TabStop = false;
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(6, 300);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(80, 17);
+			this->label10->TabIndex = 24;
+			this->label10->Text = L"Today date";
+			// 
+			// textBox9
+			// 
+			this->textBox9->Location = System::Drawing::Point(187, 300);
+			this->textBox9->Name = L"textBox9";
+			this->textBox9->Size = System::Drawing::Size(327, 22);
+			this->textBox9->TabIndex = 23;
+			this->textBox9->TextChanged += gcnew System::EventHandler(this, &Commande::textBox9_TextChanged);
 			// 
 			// textBox8
 			// 
@@ -426,29 +467,112 @@ namespace Interface2_1 {
 			// dataGridView2
 			// 
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(649, 391);
+			this->dataGridView2->Location = System::Drawing::Point(925, 243);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersWidth = 51;
 			this->dataGridView2->Size = System::Drawing::Size(240, 150);
 			this->dataGridView2->TabIndex = 14;
 			this->dataGridView2->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Commande::dataGridView2_CellContentClick);
 			// 
-			// textBox9
+			// button7
 			// 
-			this->textBox9->Location = System::Drawing::Point(187, 300);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(327, 22);
-			this->textBox9->TabIndex = 23;
-			this->textBox9->TextChanged += gcnew System::EventHandler(this, &Commande::textBox9_TextChanged);
+			this->button7->Location = System::Drawing::Point(634, 518);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(110, 32);
+			this->button7->TabIndex = 15;
+			this->button7->Text = L"AddPayment";
+			this->button7->UseVisualStyleBackColor = true;
 			// 
-			// label10
+			// button8
 			// 
-			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(6, 300);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(80, 17);
-			this->label10->TabIndex = 24;
-			this->label10->Text = L"Today date";
+			this->button8->Location = System::Drawing::Point(751, 518);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(89, 32);
+			this->button8->TabIndex = 16;
+			this->button8->Text = L"Delete";
+			this->button8->UseVisualStyleBackColor = true;
+			// 
+			// button9
+			// 
+			this->button9->Location = System::Drawing::Point(846, 518);
+			this->button9->Name = L"button9";
+			this->button9->Size = System::Drawing::Size(84, 32);
+			this->button9->TabIndex = 17;
+			this->button9->Text = L"Select";
+			this->button9->UseVisualStyleBackColor = true;
+			// 
+			// button10
+			// 
+			this->button10->Location = System::Drawing::Point(936, 518);
+			this->button10->Name = L"button10";
+			this->button10->Size = System::Drawing::Size(88, 32);
+			this->button10->TabIndex = 18;
+			this->button10->Text = L"Modify";
+			this->button10->UseVisualStyleBackColor = true;
+			// 
+			// textBox10
+			// 
+			this->textBox10->Location = System::Drawing::Point(634, 444);
+			this->textBox10->Name = L"textBox10";
+			this->textBox10->Size = System::Drawing::Size(100, 22);
+			this->textBox10->TabIndex = 19;
+			// 
+			// textBox11
+			// 
+			this->textBox11->Location = System::Drawing::Point(751, 444);
+			this->textBox11->Name = L"textBox11";
+			this->textBox11->Size = System::Drawing::Size(100, 22);
+			this->textBox11->TabIndex = 20;
+			// 
+			// textBox12
+			// 
+			this->textBox12->Location = System::Drawing::Point(871, 443);
+			this->textBox12->Name = L"textBox12";
+			this->textBox12->Size = System::Drawing::Size(100, 22);
+			this->textBox12->TabIndex = 21;
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(634, 413);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(98, 17);
+			this->label11->TabIndex = 22;
+			this->label11->Text = L"Id Commission";
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(748, 413);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(54, 17);
+			this->label12->TabIndex = 23;
+			this->label12->Text = L"label12";
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Location = System::Drawing::Point(871, 412);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(54, 17);
+			this->label13->TabIndex = 24;
+			this->label13->Text = L"label13";
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Location = System::Drawing::Point(984, 413);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(54, 17);
+			this->label14->TabIndex = 25;
+			this->label14->Text = L"label14";
+			// 
+			// textBox13
+			// 
+			this->textBox13->Location = System::Drawing::Point(987, 443);
+			this->textBox13->Name = L"textBox13";
+			this->textBox13->Size = System::Drawing::Size(100, 22);
+			this->textBox13->TabIndex = 26;
 			// 
 			// Commande
 			// 
@@ -456,6 +580,18 @@ namespace Interface2_1 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Silver;
 			this->ClientSize = System::Drawing::Size(1382, 553);
+			this->Controls->Add(this->textBox13);
+			this->Controls->Add(this->label14);
+			this->Controls->Add(this->label13);
+			this->Controls->Add(this->label12);
+			this->Controls->Add(this->label11);
+			this->Controls->Add(this->textBox12);
+			this->Controls->Add(this->textBox11);
+			this->Controls->Add(this->textBox10);
+			this->Controls->Add(this->button10);
+			this->Controls->Add(this->button9);
+			this->Controls->Add(this->button8);
+			this->Controls->Add(this->button7);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button4);
@@ -475,6 +611,7 @@ namespace Interface2_1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion

@@ -383,19 +383,19 @@ namespace Interface2_1 {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		using namespace System::IO;
 		String^ fileName = this->textBox1->Text;
-		StreamWriter^ sw = gcnew StreamWriter(fileName+this->comboBox1->Text);
-		sw->WriteLine("Total articles avec remise "+this->textBox2->Text);
-		sw->WriteLine("Total HT "+this->textBox3->Text);
-		sw->WriteLine("Total TVA " + this->textBox4->Text);
-		sw->WriteLine("Total TTC " + this->textBox5->Text);
-		sw->WriteLine("Nom de la société " + this->textBox6->Text);
-		sw->WriteLine("Addresse Société " + this->textBox7->Text);
-		sw->WriteLine("Numéro client " + this->textBox8->Text);
-		sw->WriteLine("Nom du client " + this->textBox9->Text);
-		sw->WriteLine("Code client " + this->textBox10->Text);
-		sw->WriteLine("Addresse livraison "+this->textBox11->Text);
-		sw->WriteLine("Addresse facturation "+this->textBox12->Text);
-		sw->Close();
+		StreamWriter^ ecriture = gcnew StreamWriter(fileName+this->comboBox1->Text);
+		ecriture->WriteLine("Total articles avec remise "+this->textBox2->Text);
+		ecriture->WriteLine("Total HT "+this->textBox3->Text);
+		ecriture->WriteLine("Total TVA " + this->textBox4->Text);
+		ecriture->WriteLine("Total TTC " + this->textBox5->Text);
+		ecriture->WriteLine("Nom de la société " + this->textBox6->Text);
+		ecriture->WriteLine("Addresse Société " + this->textBox7->Text);
+		ecriture->WriteLine("Numéro client " + this->textBox8->Text);
+		ecriture->WriteLine("Nom du client " + this->textBox9->Text);
+		ecriture->WriteLine("Code client " + this->textBox10->Text);
+		ecriture->WriteLine("Addresse livraison "+this->textBox11->Text);
+		ecriture->WriteLine("Addresse facturation "+this->textBox12->Text);
+		ecriture->Close();
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
