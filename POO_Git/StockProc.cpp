@@ -34,6 +34,10 @@ System::String^ NS_Comp_Mappage::StockProc::ReadEmpAdd(void)
 {
 	return "dbo.ReadEmp_Address";
 }
+System::String^ NS_Comp_Mappage::StockProc::UpdateEmpAdd(void)
+{
+	return "dbo.UpdateAddress";
+}
 
 System::String^ NS_Comp_Mappage::StockProc::CreateEmpCit(void)
 {
@@ -57,6 +61,14 @@ System::String^ NS_Comp_Mappage::StockProc::CreateEmpEmp(void)
 {
 	return "dbo.CreateEmp_Employee";
 }
+System::String^ NS_Comp_Mappage::StockProc::UpdateEmpEmp(void)
+{
+	return "dbo.UpdateEmployee";
+}
+System::String^ NS_Comp_Mappage::StockProc::DeleteEmpEmp(void)
+{
+	return "dbo.Delete_Emp";
+}
 
 System::String^ NS_Comp_Mappage::StockProc::CreateEmpOwn(void)
 {
@@ -67,12 +79,20 @@ System::String^ NS_Comp_Mappage::StockProc::CreateEmpPeo(void)
 {
 	return "dbo.CreateEmp_People";
 }
+System::String^ NS_Comp_Mappage::StockProc::UpdateEmpPeo(void)
+{
+	return "dbo.UpdateEmp_People";
+}
 
 System::String^ NS_Comp_Mappage::StockProc::CreateEmpUse(void)
 {
 	return "dbo.CreateEmp_Users";
-
 }
+System::String^ NS_Comp_Mappage::StockProc::UpdateEmpUse(void)
+{
+	return "dbo.UpdateUser";
+}
+
 System::String^ NS_Comp_Mappage::StockProc::SelectAllCommision(void) {
 
 	return "dbo.SelectAllCommision";
@@ -238,4 +258,12 @@ System::String^ NS_Comp_Mappage::StockProc::SelectAllPayment(void) {
 System::String^ NS_Comp_Mappage::StockProc::DeletePayment(void) {
 
 	return "dbo.DeletePayment";
+}
+System::String^ NS_Comp_Mappage::StockProc::UpdateEmpCus(void) {
+
+	return "dbo.UpdateCustomers";
+}
+System::String^ NS_Comp_Mappage::StockProc::DeleteEmpCus(void) {
+
+	return "dbo.Delete_Cus";
 }

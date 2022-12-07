@@ -24,6 +24,8 @@ namespace NS_Comp_Mappage
 		System::String^ CreateEmpAdd(void);
 		System::String^ ReadEmpAdd(void);
 
+		System::String^ UpdateEmpAdd(void);
+
 		System::String^ CreateEmpCit(void);
 		System::String^ ReadEmpCit(void);
 
@@ -32,11 +34,19 @@ namespace NS_Comp_Mappage
 
 		System::String^ CreateEmpEmp(void);
 
+		System::String^ UpdateEmpEmp(void);
+
+		System::String^ DeleteEmpEmp(void);
+
 		System::String^ CreateEmpOwn(void);
 
 		System::String^ CreateEmpPeo(void);
 
+		System::String^ UpdateEmpPeo(void);
+
 		System::String^ CreateEmpUse(void);
+
+		System::String^ UpdateEmpUse(void);
 
 	
 		System::String^ SelectAllCommision(void);
@@ -76,6 +86,9 @@ namespace NS_Comp_Mappage
 		System::String^ SelectAllPayment(void);
 		System::String^ DeletePayment(void);
 
+		System::String^ UpdateEmpCus(void);
+
+		System::String^ DeleteEmpCus(void);
 
 		
 	};

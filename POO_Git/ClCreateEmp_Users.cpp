@@ -25,6 +25,28 @@ System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Users::CreateEmp_Use(System::Str
 	return this->oCad->getProc(sql, dataTableName, cmd);
 }
 
+System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Users::UpdateEmp_Use(System::String^ dataTableName, System::String^ id_user, System::String^ id_people, System::String^ username_use, System::String^ password_use)
+{
+	System::String^ sql;
+	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
+
+	int idpeopleC = System::Convert::ToInt32(id_people);
+	int iduserC = System::Convert::ToInt32(id_user);
+
+	setUserNameUse(System::Convert::ToString(username_use));
+	setPasswordUse(System::Convert::ToString(password_use));
+	setIdPeople(idpeopleC);
+	setIdUser(iduserC);
+
+	sql = this->oMappTB->UpdateEmpUse();
+	cmd->Parameters->Add("@username_use", System::Data::SqlDbType::NVarChar)->Value = this->username_use;
+	cmd->Parameters->Add("@password_use", System::Data::SqlDbType::NVarChar)->Value = this->password_use;
+	cmd->Parameters->Add("@id_people", System::Data::SqlDbType::NVarChar)->Value = this->id_people;
+	cmd->Parameters->Add("@id_user", System::Data::SqlDbType::NVarChar)->Value = this->id_user;
+
+	return this->oCad->getProc(sql, dataTableName, cmd);
+}
+
 void NS_Comp_Svc::ClCreateEmp_Users::setIdUser(int id_user)
 {
 	this->id_user = id_user;

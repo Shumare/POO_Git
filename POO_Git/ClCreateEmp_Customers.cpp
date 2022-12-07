@@ -28,6 +28,43 @@ System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Customers::CreateEmp_Cus(System:
 	return this->oCad->getProc(sql, dataTableName, cmd);
 }
 
+System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Customers::UpdateEmp_Cus(System::String^ dataTableName, System::String^ numbercus, System::String^ birthdatecus, System::String^ datefirstbuycus, System::String^ idpeople)
+{
+	System::String^ sql;
+	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
+
+	int numbercusC = System::Convert::ToInt32(numbercus);
+	int idpeopleC = System::Convert::ToInt32(idpeople);
+
+	setNumberCus(numbercusC);
+	setBirthDateCus(System::Convert::ToString(birthdatecus));
+	setDateFirstBuyCus(System::Convert::ToString(datefirstbuycus));
+	setIdPeople(idpeopleC);
+
+	sql = this->oMappTB->UpdateEmpCus();
+	cmd->Parameters->Add("@number_cus", System::Data::SqlDbType::NVarChar)->Value = this->number_cus;
+	cmd->Parameters->Add("@birthdate_cus", System::Data::SqlDbType::NVarChar)->Value = this->birthdate_cus;
+	cmd->Parameters->Add("@datefirstbuy_cus", System::Data::SqlDbType::NVarChar)->Value = this->datefirstbuy_cus;
+	cmd->Parameters->Add("@id_people", System::Data::SqlDbType::NVarChar)->Value = this->id_people;
+
+	return this->oCad->getProc(sql, dataTableName, cmd);
+}
+
+System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Customers::DeleteEmp_Cus(System::String^ dataTableName, System::String^ idpeople)
+{
+	System::String^ sql;
+	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
+
+	int idpeopleC = System::Convert::ToInt32(idpeople);
+
+	setIdPeople(idpeopleC);
+
+	sql = this->oMappTB->DeleteEmpCus();
+	cmd->Parameters->Add("@id_people", System::Data::SqlDbType::NVarChar)->Value = this->id_people;
+
+	return this->oCad->getProc(sql, dataTableName, cmd);
+}
+
 void NS_Comp_Svc::ClCreateEmp_Customers::setNumberCus(int number_cus)
 {
 	this->number_cus = number_cus;
