@@ -88,6 +88,7 @@ namespace Interface2_1 {
 		void InitializeComponent(void)
 		{
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
@@ -116,7 +117,6 @@ namespace Interface2_1 {
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -154,6 +154,16 @@ namespace Interface2_1 {
 			this->groupBox2->Size = System::Drawing::Size(1358, 479);
 			this->groupBox2->TabIndex = 9;
 			this->groupBox2->TabStop = false;
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(494, 267);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(75, 23);
+			this->button6->TabIndex = 27;
+			this->button6->Text = L"Calculer";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &Stats::button6_Click);
 			// 
 			// label12
 			// 
@@ -220,6 +230,7 @@ namespace Interface2_1 {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(100, 22);
 			this->textBox1->TabIndex = 18;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Stats::textBox1_TextChanged_1);
 			// 
 			// button9
 			// 
@@ -405,16 +416,6 @@ namespace Interface2_1 {
 			this->label13->TabIndex = 27;
 			this->label13->Text = L"Demarque";
 			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(494, 267);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(75, 23);
-			this->button6->TabIndex = 27;
-			this->button6->Text = L"Calculer";
-			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Click += gcnew System::EventHandler(this, &Stats::button6_Click);
-			// 
 			// Stats
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -501,5 +502,7 @@ private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 
+private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

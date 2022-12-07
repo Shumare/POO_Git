@@ -219,3 +219,23 @@ System::String^ NS_Comp_Mappage::StockProc::SimulValCommerciale(void) {
 
 	return "dbo.SimulValCommerciale";
 }
+
+System::String^ NS_Comp_Mappage::StockProc::UpdatePayment(void) {
+
+	return "dbo.UpdatePayment";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::NewPayment(void) {
+
+	return "dbo.NewPayment";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::SelectAllPayment(void) {
+
+	return "dbo.SelectAllPayment";
+}
+
+System::String^ NS_Comp_Mappage::StockProc::DeletePayment(void) {
+
+	return "dbo.DeletePayment";
+}

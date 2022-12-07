@@ -134,6 +134,7 @@
     <ClCompile Include="ClCreateEmp_Users.cpp" />
     <ClCompile Include="CLemployees.cpp" />
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="CLpayment.cpp" />
     <ClCompile Include="CLstats.cpp" />
     <ClCompile Include="CLstock.cpp" />
     <ClCompile Include="Commande.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="Client.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CLpayment.h" />
     <ClInclude Include="CLstats.h" />
     <ClInclude Include="CLstock.h" />
     <ClInclude Include="Commande.h">

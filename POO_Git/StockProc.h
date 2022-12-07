@@ -71,6 +71,10 @@ namespace NS_Comp_Mappage
 		System::String^ ValeurCommercialeStock(void);
 		System::String^ ValeurAchatStock(void);
 		System::String^ SimulValCommerciale(void);
+		System::String^ UpdatePayment(void);
+		System::String^ NewPayment(void);
+		System::String^ SelectAllPayment(void);
+		System::String^ DeletePayment(void);
 
 
 		

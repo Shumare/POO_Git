@@ -2,6 +2,7 @@
 #include "Contain.h"
 #include "CLcommande.h"
 #include "Bill.h"
+#include "CLpayment.h"
 namespace Interface2_1 {
 
 	using namespace System;
@@ -37,6 +38,7 @@ namespace Interface2_1 {
 			}
 		}
 	private: NS_Comp_Svc::CLcommande^ oSvc = gcnew NS_Comp_Svc::CLcommande;
+	private: NS_Comp_Svc::CLpayment^ oSvcc = gcnew NS_Comp_Svc::CLpayment;
 	public: System::Data::DataSet^ oDs;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	protected:
@@ -89,6 +91,7 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::Label^ label14;
 	private: System::Windows::Forms::TextBox^ textBox13;
+	private: System::Windows::Forms::DataGridView^ dataGridView3;
 
 	private:
 		/// <summary>
@@ -147,10 +150,12 @@ namespace Interface2_1 {
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
+			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// groupBox1
@@ -482,6 +487,7 @@ namespace Interface2_1 {
 			this->button7->TabIndex = 15;
 			this->button7->Text = L"AddPayment";
 			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &Commande::button7_Click);
 			// 
 			// button8
 			// 
@@ -491,6 +497,7 @@ namespace Interface2_1 {
 			this->button8->TabIndex = 16;
 			this->button8->Text = L"Delete";
 			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &Commande::button8_Click);
 			// 
 			// button9
 			// 
@@ -500,6 +507,7 @@ namespace Interface2_1 {
 			this->button9->TabIndex = 17;
 			this->button9->Text = L"Select";
 			this->button9->UseVisualStyleBackColor = true;
+			this->button9->Click += gcnew System::EventHandler(this, &Commande::button9_Click);
 			// 
 			// button10
 			// 
@@ -509,6 +517,7 @@ namespace Interface2_1 {
 			this->button10->TabIndex = 18;
 			this->button10->Text = L"Modify";
 			this->button10->UseVisualStyleBackColor = true;
+			this->button10->Click += gcnew System::EventHandler(this, &Commande::button10_Click);
 			// 
 			// textBox10
 			// 
@@ -516,6 +525,7 @@ namespace Interface2_1 {
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->Size = System::Drawing::Size(100, 22);
 			this->textBox10->TabIndex = 19;
+			this->textBox10->TextChanged += gcnew System::EventHandler(this, &Commande::textBox10_TextChanged);
 			// 
 			// textBox11
 			// 
@@ -523,6 +533,7 @@ namespace Interface2_1 {
 			this->textBox11->Name = L"textBox11";
 			this->textBox11->Size = System::Drawing::Size(100, 22);
 			this->textBox11->TabIndex = 20;
+			this->textBox11->TextChanged += gcnew System::EventHandler(this, &Commande::textBox11_TextChanged);
 			// 
 			// textBox12
 			// 
@@ -530,6 +541,7 @@ namespace Interface2_1 {
 			this->textBox12->Name = L"textBox12";
 			this->textBox12->Size = System::Drawing::Size(100, 22);
 			this->textBox12->TabIndex = 21;
+			this->textBox12->TextChanged += gcnew System::EventHandler(this, &Commande::textBox12_TextChanged);
 			// 
 			// label11
 			// 
@@ -545,27 +557,27 @@ namespace Interface2_1 {
 			this->label12->AutoSize = true;
 			this->label12->Location = System::Drawing::Point(748, 413);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(54, 17);
+			this->label12->Size = System::Drawing::Size(101, 17);
 			this->label12->TabIndex = 23;
-			this->label12->Text = L"label12";
+			this->label12->Text = L"DatePayement";
 			// 
 			// label13
 			// 
 			this->label13->AutoSize = true;
 			this->label13->Location = System::Drawing::Point(871, 412);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(54, 17);
+			this->label13->Size = System::Drawing::Size(64, 17);
 			this->label13->TabIndex = 24;
-			this->label13->Text = L"label13";
+			this->label13->Text = L"Sum Pay";
 			// 
 			// label14
 			// 
 			this->label14->AutoSize = true;
 			this->label14->Location = System::Drawing::Point(984, 413);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(54, 17);
+			this->label14->Size = System::Drawing::Size(95, 17);
 			this->label14->TabIndex = 25;
-			this->label14->Text = L"label14";
+			this->label14->Text = L"TypePayment";
 			// 
 			// textBox13
 			// 
@@ -574,12 +586,23 @@ namespace Interface2_1 {
 			this->textBox13->Size = System::Drawing::Size(100, 22);
 			this->textBox13->TabIndex = 26;
 			// 
+			// dataGridView3
+			// 
+			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView3->Location = System::Drawing::Point(1130, 463);
+			this->dataGridView3->Name = L"dataGridView3";
+			this->dataGridView3->RowHeadersWidth = 51;
+			this->dataGridView3->Size = System::Drawing::Size(240, 150);
+			this->dataGridView3->TabIndex = 27;
+			this->dataGridView3->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Commande::dataGridView3_CellContentClick);
+			// 
 			// Commande
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Silver;
 			this->ClientSize = System::Drawing::Size(1382, 553);
+			this->Controls->Add(this->dataGridView3);
 			this->Controls->Add(this->textBox13);
 			this->Controls->Add(this->label14);
 			this->Controls->Add(this->label13);
@@ -610,6 +633,7 @@ namespace Interface2_1 {
 			this->groupBox2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -722,7 +746,6 @@ namespace Interface2_1 {
 		if (date2 == date) {
 			String^ discount = "10";
 		}
-		System::Convert::ToDateTime(date2);
 		this->oSvc->NewCommission("NewCommission",this->textBox6->Text,allinfo,this->textBox2->Text,this->textBox3->Text,numberitems,discount,priceitems);
 
 	}
@@ -757,6 +780,31 @@ private: System::Void textBox7_TextChanged_1(System::Object^ sender, System::Eve
 private: System::Void textBox8_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox9_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void dataGridView3_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	this->dataGridView3->DataSource = this->oSvcc->NewPayment("newpay",this->textBox11->Text,this->textBox12->Text, this->textBox13->Text);
+	
+}
+private: System::Void textBox11_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox12_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->DataSource = this->oSvcc->DeletePayment("delpay", this->textBox10->Text);
+}
+private: System::Void textBox10_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView3->Refresh();
+	this->dataGridView3->DataSource = this->oSvcc->SelectAllPayment("selectpay", this->textBox10->Text);
+	this->dataGridView3->DataMember = "selectpay";
+}
+private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView3->DataSource = this->oSvcc->UpdatePayment("uppay", this->textBox10->Text, this->textBox11->Text, this->textBox12->Text, this->textBox13->Text);
+	
 }
 };
 }

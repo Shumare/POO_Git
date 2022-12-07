@@ -31,6 +31,7 @@
     <ClCompile Include="StockProc.cpp" />
     <ClCompile Include="Sup.cpp" />
     <ClCompile Include="CLstats.cpp" />
+    <ClCompile Include="CLpayment.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Acity.h" />
@@ -61,5 +62,6 @@
     <ClInclude Include="Sup.h" />
     <ClInclude Include="CLstats.h" />
     <ClInclude Include="Bill.h" />
+    <ClInclude Include="CLpayment.h" />
   </ItemGroup>
 </Project>
