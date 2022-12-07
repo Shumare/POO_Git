@@ -3,6 +3,8 @@
 #include "ClCreateEmp_City.h"
 #include "ClCreateEmp_Country.h"
 #include "ClCreateEmp_Customers.h"
+#include "ClCreateEmp_Own.h"
+#include "ClCreateEmp_People.h"
 #include "Acity.h"
 #include "Acountry.h"
 
@@ -44,6 +46,8 @@ namespace Interface2_1 {
 	private: NS_Comp_Svc::ClCreateEmp_Country^ oSvc2 = gcnew NS_Comp_Svc::ClCreateEmp_Country;
 	private: NS_Comp_Svc::ClCreateEmp_Address^ oSvc3 = gcnew NS_Comp_Svc::ClCreateEmp_Address;
 	private: NS_Comp_Svc::ClCreateEmp_Customers^ oSvc4 = gcnew NS_Comp_Svc::ClCreateEmp_Customers;
+	private: NS_Comp_Svc::ClCreateEmp_Own^ oSvc5 = gcnew NS_Comp_Svc::ClCreateEmp_Own;
+	private: NS_Comp_Svc::ClCreateEmp_People^ oSvc6 = gcnew NS_Comp_Svc::ClCreateEmp_People;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	protected:
 
@@ -74,7 +78,7 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
+
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Button^ button3;
 
@@ -106,6 +110,9 @@ namespace Interface2_1 {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Button^ button11;
 	private: System::Windows::Forms::Button^ button10;
+	private: System::Windows::Forms::Button^ button12;
+	private: System::Windows::Forms::Label^ label16;
+	private: System::Windows::Forms::TextBox^ textBox13;
 
 	private:
 		/// <summary>
@@ -125,6 +132,9 @@ namespace Interface2_1 {
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
+			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->label15 = (gcnew System::Windows::Forms::Label());
@@ -163,7 +173,6 @@ namespace Interface2_1 {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
@@ -229,6 +238,9 @@ namespace Interface2_1 {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->label16);
+			this->groupBox2->Controls->Add(this->textBox13);
+			this->groupBox2->Controls->Add(this->button12);
 			this->groupBox2->Controls->Add(this->button11);
 			this->groupBox2->Controls->Add(this->button10);
 			this->groupBox2->Controls->Add(this->label15);
@@ -268,13 +280,40 @@ namespace Interface2_1 {
 			this->groupBox2->Controls->Add(this->label1);
 			this->groupBox2->Location = System::Drawing::Point(12, 113);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(617, 369);
+			this->groupBox2->Size = System::Drawing::Size(617, 389);
 			this->groupBox2->TabIndex = 6;
 			this->groupBox2->TabStop = false;
 			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Location = System::Drawing::Point(6, 136);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(72, 17);
+			this->label16->TabIndex = 48;
+			this->label16->Text = L"Type Way";
+			// 
+			// textBox13
+			// 
+			this->textBox13->Location = System::Drawing::Point(186, 136);
+			this->textBox13->Name = L"textBox13";
+			this->textBox13->Size = System::Drawing::Size(328, 22);
+			this->textBox13->TabIndex = 47;
+			this->textBox13->TextChanged += gcnew System::EventHandler(this, &Client::textBox13_TextChanged);
+			// 
+			// button12
+			// 
+			this->button12->Location = System::Drawing::Point(520, 247);
+			this->button12->Name = L"button12";
+			this->button12->Size = System::Drawing::Size(91, 50);
+			this->button12->TabIndex = 46;
+			this->button12->Text = L"Update Address";
+			this->button12->UseVisualStyleBackColor = true;
+			this->button12->Click += gcnew System::EventHandler(this, &Client::button12_Click);
+			// 
 			// button11
 			// 
-			this->button11->Location = System::Drawing::Point(520, 118);
+			this->button11->Location = System::Drawing::Point(520, 113);
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(91, 25);
 			this->button11->TabIndex = 45;
@@ -284,7 +323,7 @@ namespace Interface2_1 {
 			// 
 			// button10
 			// 
-			this->button10->Location = System::Drawing::Point(520, 61);
+			this->button10->Location = System::Drawing::Point(520, 56);
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(91, 25);
 			this->button10->TabIndex = 44;
@@ -295,7 +334,7 @@ namespace Interface2_1 {
 			// label15
 			// 
 			this->label15->AutoSize = true;
-			this->label15->Location = System::Drawing::Point(334, 121);
+			this->label15->Location = System::Drawing::Point(334, 116);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(67, 17);
 			this->label15->TabIndex = 43;
@@ -303,7 +342,7 @@ namespace Interface2_1 {
 			// 
 			// textBox12
 			// 
-			this->textBox12->Location = System::Drawing::Point(415, 118);
+			this->textBox12->Location = System::Drawing::Point(415, 113);
 			this->textBox12->Name = L"textBox12";
 			this->textBox12->Size = System::Drawing::Size(99, 22);
 			this->textBox12->TabIndex = 42;
@@ -311,7 +350,7 @@ namespace Interface2_1 {
 			// 
 			// textBox11
 			// 
-			this->textBox11->Location = System::Drawing::Point(415, 90);
+			this->textBox11->Location = System::Drawing::Point(415, 85);
 			this->textBox11->Name = L"textBox11";
 			this->textBox11->Size = System::Drawing::Size(99, 22);
 			this->textBox11->TabIndex = 41;
@@ -320,7 +359,7 @@ namespace Interface2_1 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(312, 93);
+			this->label4->Location = System::Drawing::Point(312, 88);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(97, 17);
 			this->label4->TabIndex = 40;
@@ -328,7 +367,7 @@ namespace Interface2_1 {
 			// 
 			// button9
 			// 
-			this->button9->Location = System::Drawing::Point(520, 337);
+			this->button9->Location = System::Drawing::Point(520, 354);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(91, 27);
 			this->button9->TabIndex = 39;
@@ -339,7 +378,7 @@ namespace Interface2_1 {
 			// label14
 			// 
 			this->label14->AutoSize = true;
-			this->label14->Location = System::Drawing::Point(366, 345);
+			this->label14->Location = System::Drawing::Point(366, 362);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(50, 17);
 			this->label14->TabIndex = 38;
@@ -348,7 +387,7 @@ namespace Interface2_1 {
 			// label13
 			// 
 			this->label13->AutoSize = true;
-			this->label13->Location = System::Drawing::Point(183, 345);
+			this->label13->Location = System::Drawing::Point(183, 362);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(50, 17);
 			this->label13->TabIndex = 37;
@@ -356,7 +395,7 @@ namespace Interface2_1 {
 			// 
 			// textBox8
 			// 
-			this->textBox8->Location = System::Drawing::Point(441, 342);
+			this->textBox8->Location = System::Drawing::Point(441, 359);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(73, 22);
 			this->textBox8->TabIndex = 36;
@@ -365,7 +404,7 @@ namespace Interface2_1 {
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(6, 342);
+			this->label12->Location = System::Drawing::Point(6, 359);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(36, 17);
 			this->label12->TabIndex = 35;
@@ -373,7 +412,7 @@ namespace Interface2_1 {
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(258, 342);
+			this->textBox7->Location = System::Drawing::Point(258, 359);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(73, 22);
 			this->textBox7->TabIndex = 34;
@@ -381,7 +420,7 @@ namespace Interface2_1 {
 			// 
 			// button8
 			// 
-			this->button8->Location = System::Drawing::Point(520, 286);
+			this->button8->Location = System::Drawing::Point(520, 303);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(91, 50);
 			this->button8->TabIndex = 33;
@@ -391,7 +430,7 @@ namespace Interface2_1 {
 			// 
 			// button7
 			// 
-			this->button7->Location = System::Drawing::Point(520, 90);
+			this->button7->Location = System::Drawing::Point(520, 85);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(91, 25);
 			this->button7->TabIndex = 32;
@@ -401,7 +440,7 @@ namespace Interface2_1 {
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(520, 21);
+			this->button6->Location = System::Drawing::Point(520, 16);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(91, 35);
 			this->button6->TabIndex = 31;
@@ -411,7 +450,7 @@ namespace Interface2_1 {
 			// button5
 			// 
 			this->button5->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button5->Location = System::Drawing::Point(492, 258);
+			this->button5->Location = System::Drawing::Point(492, 275);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(22, 22);
 			this->button5->TabIndex = 30;
@@ -422,7 +461,7 @@ namespace Interface2_1 {
 			// button4
 			// 
 			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button4->Location = System::Drawing::Point(492, 230);
+			this->button4->Location = System::Drawing::Point(492, 247);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(22, 22);
 			this->button4->TabIndex = 29;
@@ -434,7 +473,7 @@ namespace Interface2_1 {
 			// 
 			this->comboBox3->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(186, 255);
+			this->comboBox3->Location = System::Drawing::Point(186, 272);
 			this->comboBox3->Name = L"comboBox3";
 			this->comboBox3->Size = System::Drawing::Size(300, 24);
 			this->comboBox3->TabIndex = 28;
@@ -444,7 +483,7 @@ namespace Interface2_1 {
 			// 
 			this->comboBox2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(186, 227);
+			this->comboBox2->Location = System::Drawing::Point(186, 244);
 			this->comboBox2->Name = L"comboBox2";
 			this->comboBox2->Size = System::Drawing::Size(300, 24);
 			this->comboBox2->TabIndex = 13;
@@ -453,7 +492,7 @@ namespace Interface2_1 {
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(6, 314);
+			this->label11->Location = System::Drawing::Point(6, 331);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(87, 17);
 			this->label11->TabIndex = 25;
@@ -462,7 +501,7 @@ namespace Interface2_1 {
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(6, 286);
+			this->label10->Location = System::Drawing::Point(6, 303);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(40, 17);
 			this->label10->TabIndex = 24;
@@ -471,7 +510,7 @@ namespace Interface2_1 {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(6, 258);
+			this->label9->Location = System::Drawing::Point(6, 275);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(57, 17);
 			this->label9->TabIndex = 23;
@@ -480,7 +519,7 @@ namespace Interface2_1 {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(6, 230);
+			this->label8->Location = System::Drawing::Point(6, 247);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(31, 17);
 			this->label8->TabIndex = 22;
@@ -489,7 +528,7 @@ namespace Interface2_1 {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(6, 202);
+			this->label7->Location = System::Drawing::Point(6, 219);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(69, 17);
 			this->label7->TabIndex = 21;
@@ -498,7 +537,7 @@ namespace Interface2_1 {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(6, 174);
+			this->label6->Location = System::Drawing::Point(6, 191);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(58, 17);
 			this->label6->TabIndex = 20;
@@ -507,7 +546,7 @@ namespace Interface2_1 {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(6, 146);
+			this->label5->Location = System::Drawing::Point(6, 163);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(36, 17);
 			this->label5->TabIndex = 19;
@@ -515,7 +554,7 @@ namespace Interface2_1 {
 			// 
 			// textBox10
 			// 
-			this->textBox10->Location = System::Drawing::Point(186, 314);
+			this->textBox10->Location = System::Drawing::Point(186, 331);
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->Size = System::Drawing::Size(328, 22);
 			this->textBox10->TabIndex = 17;
@@ -523,7 +562,7 @@ namespace Interface2_1 {
 			// 
 			// textBox9
 			// 
-			this->textBox9->Location = System::Drawing::Point(186, 286);
+			this->textBox9->Location = System::Drawing::Point(186, 303);
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(328, 22);
 			this->textBox9->TabIndex = 16;
@@ -531,7 +570,7 @@ namespace Interface2_1 {
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(186, 202);
+			this->textBox6->Location = System::Drawing::Point(186, 219);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(328, 22);
 			this->textBox6->TabIndex = 13;
@@ -539,7 +578,7 @@ namespace Interface2_1 {
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(186, 174);
+			this->textBox5->Location = System::Drawing::Point(186, 191);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(328, 22);
 			this->textBox5->TabIndex = 12;
@@ -547,7 +586,7 @@ namespace Interface2_1 {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(186, 146);
+			this->textBox4->Location = System::Drawing::Point(186, 163);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(328, 22);
 			this->textBox4->TabIndex = 11;
@@ -555,7 +594,7 @@ namespace Interface2_1 {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(186, 90);
+			this->textBox3->Location = System::Drawing::Point(186, 85);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(99, 22);
 			this->textBox3->TabIndex = 10;
@@ -564,7 +603,7 @@ namespace Interface2_1 {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(6, 90);
+			this->label3->Location = System::Drawing::Point(6, 85);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(71, 17);
 			this->label3->TabIndex = 9;
@@ -572,7 +611,7 @@ namespace Interface2_1 {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(186, 62);
+			this->textBox2->Location = System::Drawing::Point(186, 57);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(328, 22);
 			this->textBox2->TabIndex = 8;
@@ -581,7 +620,7 @@ namespace Interface2_1 {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(6, 62);
+			this->label2->Location = System::Drawing::Point(6, 57);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(76, 17);
 			this->label2->TabIndex = 7;
@@ -589,7 +628,7 @@ namespace Interface2_1 {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(186, 34);
+			this->textBox1->Location = System::Drawing::Point(186, 29);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(328, 22);
 			this->textBox1->TabIndex = 6;
@@ -598,7 +637,7 @@ namespace Interface2_1 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(6, 34);
+			this->label1->Location = System::Drawing::Point(6, 29);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(76, 17);
 			this->label1->TabIndex = 3;
@@ -607,24 +646,13 @@ namespace Interface2_1 {
 			// button1
 			// 
 			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button1->Location = System::Drawing::Point(349, 488);
+			this->button1->Location = System::Drawing::Point(349, 508);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(177, 33);
 			this->button1->TabIndex = 7;
 			this->button1->Text = L"Delete";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Client::button1_Click);
-			// 
-			// button2
-			// 
-			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button2->Location = System::Drawing::Point(166, 488);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(177, 33);
-			this->button2->TabIndex = 8;
-			this->button2->Text = L"Save";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &Client::button2_Click);
 			// 
 			// dataGridView1
 			// 
@@ -704,7 +732,6 @@ namespace Interface2_1 {
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->dataGridView1);
-			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
@@ -761,6 +788,8 @@ namespace Interface2_1 {
 	private: System::Void radioButton5_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 		   //Fin Address
+	private: System::Void textBox13_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
 	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -808,11 +837,7 @@ namespace Interface2_1 {
 
 	//button DELETE
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-
-	//button SAVE
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		this->oSvc4->DeleteEmp_Cus("Delete", this->textBox12->Text);
 	}
 
 	//Afficher la/les tables
@@ -855,6 +880,7 @@ namespace Interface2_1 {
 	}
 	//button Own
 	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc5->CreateEmp_Own("New", this->textBox7->Text, this->textBox8->Text);
 	}
 
 	//button New customers
@@ -864,11 +890,30 @@ namespace Interface2_1 {
 
 		   //button update people
 	private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc6->UpdateEmp_Peo("Update", this->textBox12->Text, this->textBox1->Text, this->textBox2->Text);
 	}
 
 		   //button update customers
 	private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc4->UpdateEmp_Cus("Update", this->textBox12->Text, this->textBox3->Text, this->textBox11->Text, this->textBox12->Text);
 	}
+
+		   //button update address
+	private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dataGridView4->Refresh();
+		String^ foo = this->comboBox2->Text;
+		this->dataGridView4->DataSource = this->oSvc3->SelectIdCity("rsl", foo);
+		this->dataGridView4->DataMember = "rsl";
+		int foo1 = (int)this->dataGridView4->Rows[0]->Cells[8]->Value;
+		String^ result = System::Convert::ToString(foo1);
+		this->dataGridView5->Refresh();
+		String^ foo2 = this->comboBox3->Text;
+		this->dataGridView5->DataSource = this->oSvc3->SelectIdCountry("rsl1", foo2);
+		this->dataGridView5->DataMember = "rsl1";
+		int foo3 = (int)this->dataGridView5->Rows[0]->Cells[0]->Value;
+		String^ result1 = System::Convert::ToString(foo3);
+		this->oSvc3->UpdateEmp_Add("Update", this->textBox8->Text, this->textBox5->Text, this->textBox13->Text, this->textBox4->Text, this->textBox10->Text, this->textBox9->Text, this->textBox6->Text, result1, result);
+	}
+
 };
 }

@@ -50,6 +50,21 @@ System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Customers::UpdateEmp_Cus(System:
 	return this->oCad->getProc(sql, dataTableName, cmd);
 }
 
+System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Customers::DeleteEmp_Cus(System::String^ dataTableName, System::String^ idpeople)
+{
+	System::String^ sql;
+	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
+
+	int idpeopleC = System::Convert::ToInt32(idpeople);
+
+	setIdPeople(idpeopleC);
+
+	sql = this->oMappTB->DeleteEmpCus();
+	cmd->Parameters->Add("@id_people", System::Data::SqlDbType::NVarChar)->Value = this->id_people;
+
+	return this->oCad->getProc(sql, dataTableName, cmd);
+}
+
 void NS_Comp_Svc::ClCreateEmp_Customers::setNumberCus(int number_cus)
 {
 	this->number_cus = number_cus;

@@ -16,6 +16,7 @@ namespace NS_Comp_Svc {
 		ClCreateEmp_Customers(void);
 		System::Data::DataSet^ CreateEmp_Cus(System::String^, System::String^, System::String^, System::String^, System::String^);
 		System::Data::DataSet^ UpdateEmp_Cus(System::String^, System::String^, System::String^, System::String^, System::String^);
+		System::Data::DataSet^ DeleteEmp_Cus(System::String^, System::String^);
 
 		void setNumberCus(int);
 		int getNumberCus(void);

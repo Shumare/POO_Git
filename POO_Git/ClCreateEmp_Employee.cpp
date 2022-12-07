@@ -46,6 +46,19 @@ System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Employee::UpdateEmp_Emp(System::
 	return this->oCad->getProc(sql, dataTableName, cmd);
 }
 
+System::Data::DataSet^ NS_Comp_Svc::ClCreateEmp_Employee::DeleteEmp_Emp(System::String^ dataTableName, System::String^ idpeople)
+{
+	System::String^ sql;
+	System::Data::SqlClient::SqlCommand^ cmd = gcnew System::Data::SqlClient::SqlCommand;
+
+	int idpeopleC = System::Convert::ToInt32(idpeople);
+
+	sql = this->oMappTB->DeleteEmpEmp();
+	cmd->Parameters->Add("@id_people", System::Data::SqlDbType::NVarChar)->Value = this->id_people;
+
+	return this->oCad->getProc(sql, dataTableName, cmd);
+}
+
 void NS_Comp_Svc::ClCreateEmp_Employee::setIdPeople(int id_people)
 {
 	this->id_people = id_people;
