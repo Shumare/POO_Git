@@ -65,6 +65,10 @@ System::String^ NS_Comp_Mappage::StockProc::UpdateEmpEmp(void)
 {
 	return "dbo.UpdateEmployee";
 }
+System::String^ NS_Comp_Mappage::StockProc::DeleteEmpEmp(void)
+{
+	return "dbo.Delete_Emp";
+}
 
 System::String^ NS_Comp_Mappage::StockProc::CreateEmpOwn(void)
 {
@@ -189,7 +193,12 @@ System::String^ NS_Comp_Mappage::StockProc::SelectIdCountry(void) {
 System::String^ NS_Comp_Mappage::StockProc::CreateEmpCus(void) {
 
 	return "dbo.CreateEmp_Customers";
-}System::String^ NS_Comp_Mappage::StockProc::UpdateEmpCus(void) {
+}
+System::String^ NS_Comp_Mappage::StockProc::UpdateEmpCus(void) {
 
 	return "dbo.UpdateCustomers";
+}
+System::String^ NS_Comp_Mappage::StockProc::DeleteEmpCus(void) {
+
+	return "dbo.Delete_Cus";
 }

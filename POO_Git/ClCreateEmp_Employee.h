@@ -15,6 +15,7 @@ namespace NS_Comp_Svc {
 		ClCreateEmp_Employee(void);
 		System::Data::DataSet^ CreateEmp_Emp(System::String^, System::String^, System::String^, System::String^);
 		System::Data::DataSet^ UpdateEmp_Emp(System::String^, System::String^, System::String^, System::String^);
+		System::Data::DataSet^ DeleteEmp_Emp(System::String^, System::String^);
 
 		void setIdPeople(int);
 		int getIdPeople(void);

@@ -36,6 +36,8 @@ namespace NS_Comp_Mappage
 
 		System::String^ UpdateEmpEmp(void);
 
+		System::String^ DeleteEmpEmp(void);
+
 		System::String^ CreateEmpOwn(void);
 
 		System::String^ CreateEmpPeo(void);
@@ -71,6 +73,8 @@ namespace NS_Comp_Mappage
 		System::String^ CreateEmpCus(void);
 
 		System::String^ UpdateEmpCus(void);
+
+		System::String^ DeleteEmpCus(void);
 
 		
 	};

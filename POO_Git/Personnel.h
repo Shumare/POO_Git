@@ -988,6 +988,7 @@ namespace Interface2_1 {
 
 		   //button DELETE
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc5->DeleteEmp_Emp("Delete", this->textBox15->Text);
 	}
 
 		   //button Update Address
